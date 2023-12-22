@@ -1,0 +1,2 @@
+C:\Users\YJ\source\repos\Win32_From\x64\Debug\Win32_From.exe
+C:\Users\YJ\Desktop\codes\cpp\Win32_From\x64\Debug\Win32_From.exe
