@@ -14,12 +14,10 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     {
     case DLL_PROCESS_ATTACH:
         OutputDebugString(L"DLL Inject Sucess");
-        MessageBox(NULL, L"dll sucess", L"dll sucess", MB_OK);
+        main();
+        MessageBox(NULL, L"dll ATTACH sucess", L"sucess", MB_OK);
         break;//加载DLL时运行d
     case DLL_THREAD_ATTACH:
-        OutputDebugString(L"DLL free Sucess");
-        MessageBox(NULL, L"dll free", L"dll free", MB_OK);
-        break;//加载DLL时运行d
     case DLL_THREAD_DETACH:
     case DLL_PROCESS_DETACH:
         break;
@@ -52,10 +50,20 @@ void ShowMessage(const char* message)
     MessageBoxA(NULL, message, "DLL Message", MB_OK);
 }
 int main() {
-    MessageBoxA(NULL, "调用dll成功", "DLL Message", MB_OK);
-    int wmId = 0;
-    if (wmId == 1002) {
-        MessageBoxA(NULL, "按钮被劫持了！", "提示", MB_ICONINFORMATION);
+    DWORD processId;
+    HANDLE hProcess, hCurrentProcess;
+    MessageBoxA(NULL, "调用dll main函数成功", "success", MB_OK);
+    char ss[10] = "Hacked";
+    // 获取当前进程ID
+    processId = GetCurrentProcessId();
+
+    // 打开当前进程
+    hCurrentProcess = OpenProcess(PROCESS_ALL_ACCESS, TRUE, processId);
+    if (hCurrentProcess == NULL)
+    {
+        MessageBoxA(NULL, "无法打开当前进程", "ERROR", MB_OK);
+        return 1;
     }
-    return 0;
+    WriteProcessMemory(hCurrentProcess,(void *)0x7FF778F3E000,&ss,sizeof(ss),NULL);
+
 }

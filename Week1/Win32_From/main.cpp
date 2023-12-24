@@ -13,7 +13,7 @@
 static TCHAR szWindowClass[] = _T("DesktopApp");
 
 // The string that appears in the application's title bar.
-static TCHAR szTitle[] = _T("Win32_From Test");
+static TCHAR szTitle[] = _T("Win32_From Test Inject");
 
 // Stored instance handle for use in Win32 API calls such as FindResource
 HINSTANCE hInst;
@@ -29,11 +29,11 @@ int WINAPI WinMain(
 )
 {
     WNDCLASSEX wcex;
+    openDebugPri();
     //dllFuncs();
     //TestDllInject();
     RemoteDllInject();
-    //refInject();
-    openDebugPri();
+    //refInject(); 已抛弃
     wcex.cbSize = sizeof(WNDCLASSEX);
     wcex.style = CS_HREDRAW | CS_VREDRAW;
     wcex.lpfnWndProc = WndProc;
@@ -120,11 +120,12 @@ int WINAPI WinMain(
 //
 //  WM_PAINT    - Paint the main window
 //  WM_DESTROY  - post a quit message and return
+char s[10] = "normal";
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     PAINTSTRUCT ps;
     HDC hdc;
-    TCHAR greeting[] = _T("Hello, Windows desktop!");
+    TCHAR greeting[] = _T("Hello, YJ!");
 
     switch (message)
     {
@@ -146,7 +147,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         // 处理按钮点击事件
         char wmidstr = char(wmId);
         if (wmId == 1002) {
-            MessageBoxA(NULL, "按钮被点击了！", "提示", MB_ICONINFORMATION);
+            MessageBoxA(NULL, "按钮被点击了！", ("提示%s",s), MB_ICONINFORMATION);
         }
         break;
     }

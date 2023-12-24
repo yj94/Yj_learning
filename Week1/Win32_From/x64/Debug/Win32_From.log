@@ -1,7 +1,3 @@
 ﻿  main.cpp
-C:\Users\YJ\Desktop\codes\cpp\Win32_From\header.h(123,5): warning C4311: “类型强制转换”: 从“LPCSTR”到“DWORD”的指针截断
-C:\Users\YJ\Desktop\codes\cpp\Win32_From\header.h(123,5): warning C4302: “类型强制转换”: 从“LPCSTR”到“DWORD”截断
-C:\Users\YJ\Desktop\codes\cpp\Win32_From\header.h(128,26): warning C4311: “类型强制转换”: 从“LPCSTR”到“DWORD”的指针截断
-C:\Users\YJ\Desktop\codes\cpp\Win32_From\header.h(128,26): warning C4302: “类型强制转换”: 从“LPCSTR”到“DWORD”截断
-C:\Users\YJ\Desktop\codes\cpp\Win32_From\main.cpp(139,40): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\YJ\Desktop\codes\cpp\Win32_From\main.cpp(140,40): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
   Win32_From.vcxproj -> C:\Users\YJ\Desktop\codes\cpp\Win32_From\x64\Debug\Win32_From.exe

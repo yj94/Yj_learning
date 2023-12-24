@@ -60,9 +60,9 @@ void WINAPI TestDllInject()
 }
 void RemoteDllInject()
 {
-    const char* path = "C:\\Users\\YJ\\Desktop\\codes\\cpp\\Win_MSG\\Dll_TEST\\x64\\Debug\\Dll_TEST.dll";//要注入的dll路径
+    const char* path = "C:\\Users\\YJ\\Desktop\\codes\\cpp\\Dll_TEST\\x64\\Debug\\Dll_TEST.dll";//要注入的dll路径
 
-    HWND  hwnd = ::FindWindowA(NULL, "Win32_From Test");
+    HWND  hwnd = ::FindWindowA(NULL, "Win32_From Test TARGET");
     DWORD pid;
     GetWindowThreadProcessId(hwnd, &pid);
 
@@ -82,6 +82,7 @@ void RemoteDllInject()
 
 }
 //反射dll注入
+/*
 FARPROC WINAPI GetProcAddressR( HANDLE hModule, LPCSTR lpProcName )
 {
 	UINT_PTR uiLibraryAddress = 0;
@@ -344,9 +345,9 @@ void refInject() {
 	TOKEN_PRIVILEGES priv = { 0 };
 	do
 	{
-		HWND  hwnd = ::FindWindowA(NULL, "新文件 1 - Notepad++");
+		HWND  hwnd = ::FindWindowA(NULL, "Win32_From Test TARGET");
 		GetWindowThreadProcessId(hwnd, &dwProcessId);
-		LPCSTR injectionDll = "C:\\Users\\YJ\\Desktop\\codes\\cpp\\Win32_From\\x64\\Debug\\1.dll";
+		LPCSTR injectionDll = "C:\\Users\\YJ\\Desktop\\codes\\cpp\\Dll_TEST\\x64\\Debug\\Dll_TEST.dll";
 		//Get the Handle of the DLL file.
 		HANDLE hFile = CreateFileA(injectionDll, GENERIC_READ, 0, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
 		if (hFile == INVALID_HANDLE_VALUE)
@@ -379,8 +380,10 @@ void refInject() {
 		if (!hMoudle) {
 			MessageBoxA(NULL, "failed inject dll", "ERROR", MB_OK);
 		}
+		WaitForSingleObject(hModule, -1);
 	} while (0);
 }
+*/
 void openDebugPri() {
 	HANDLE hToken = NULL;
 
