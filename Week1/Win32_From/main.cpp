@@ -30,9 +30,6 @@ int WINAPI WinMain(
 {
     WNDCLASSEX wcex;
     openDebugPri();
-    //dllFuncs();
-    //TestDllInject();
-    RemoteDllInject();
     //refInject(); 已抛弃
     wcex.cbSize = sizeof(WNDCLASSEX);
     wcex.style = CS_HREDRAW | CS_VREDRAW;
@@ -83,8 +80,14 @@ int WINAPI WinMain(
         hInstance,
         NULL
     );
-    HWND hBtnWnd1 = CreateWindowEx(0, TEXT("BUTTON"), TEXT("Button1"), WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
+    HWND hBtnWnd1 = CreateWindowEx(0, TEXT("BUTTON"), TEXT("测试"), WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
         30, 30, 100, 30, hWnd, (HMENU)1002, hInstance, 0);
+    HWND hBtnWnd2 = CreateWindowEx(0, TEXT("BUTTON"), TEXT("主动调用dll"), WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
+        60, 60, 100, 30, hWnd, (HMENU)1003, hInstance, 0);
+    HWND hBtnWnd3 = CreateWindowEx(0, TEXT("BUTTON"), TEXT("直接注入dll"), WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
+        90, 90, 100, 30, hWnd, (HMENU)1004, hInstance, 0);
+    HWND hBtnWnd4 = CreateWindowEx(0, TEXT("BUTTON"), TEXT("远程注入dll"), WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
+        120, 120, 100, 30, hWnd, (HMENU)1005, hInstance, 0);
 
     if (!hWnd)
     {
@@ -146,8 +149,22 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         int wmId = LOWORD(wParam);
         // 处理按钮点击事件
         char wmidstr = char(wmId);
-        if (wmId == 1002) {
-            MessageBoxA(NULL, "按钮被点击了！", ("提示%s",s), MB_ICONINFORMATION);
+        switch (wmId) {
+        case 1002:
+            MessageBoxA(NULL, "按钮被点击了！", ("提示%s", s), MB_ICONINFORMATION);
+            break;
+        case 1003:
+            MessageBoxA(NULL, "主动调用dll", ("FUNC", s), MB_ICONINFORMATION);
+            dllFuncs();
+            break;
+        case 1004:
+            MessageBoxA(NULL, "直接注入dll", ("FUNC", s), MB_ICONINFORMATION);
+            TestDllInject();
+            break;
+        case 1005:
+            MessageBoxA(NULL, "远程注入dll", ("FUNC", s), MB_ICONINFORMATION);
+            RemoteDllInject();
+            break;
         }
         break;
     }

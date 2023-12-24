@@ -34,13 +34,12 @@ LRESULT CALLBACK KeyboardProc(
     if (code == HC_ACTION)
     {
         if (wParam == VK_INSERT && (lParam & (1 << 30)))
-            MessageBoxA(NULL, "您按下了HOME键", "HOME", MB_OK);
+            MessageBoxA(NULL, "您按下了INSERT键", "success", MB_OK);
     }
 
     return  CallNextHookEx(0, code, wParam, lParam);
 
 }
-
 extern "C" _declspec(dllexport)  HOOKPROC getDllPoint(void)
 {
     return KeyboardProc;
@@ -64,6 +63,6 @@ int main() {
         MessageBoxA(NULL, "无法打开当前进程", "ERROR", MB_OK);
         return 1;
     }
-    WriteProcessMemory(hCurrentProcess,(void *)0x7FF778F3E000,&ss,sizeof(ss),NULL);
+    WriteProcessMemory(hCurrentProcess,(void *)0x7FF6BE8AE000,&ss,sizeof(ss),NULL);
 
 }

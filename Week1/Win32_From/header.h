@@ -15,7 +15,7 @@ void WINAPI dllFuncs() {//dll编程测试
     HINSTANCE hDll;
     ShowMessageFunc showMessage;
 
-    hDll = LoadLibrary(L"test.dll");
+    hDll = LoadLibrary(L"C:\\Users\\YJ\\Desktop\\codes\\cpp\\Dll_TEST\\x64\\Debug\\Dll_TEST.dll");
     if (hDll != NULL)
     {
         showMessage = (ShowMessageFunc)GetProcAddress(hDll, "ShowMessage");
@@ -47,12 +47,12 @@ void WINAPI dllFuncs() {//dll编程测试
 typedef HOOKPROC(*func)(void);
 void WINAPI TestDllInject()
 {
-    HWND  hwnd = ::FindWindowA(NULL, "Win32_From Test");
+    HWND  hwnd = ::FindWindowA(NULL, "Win32_From Test TARGET");
     DWORD pid;
     DWORD thread_id = ::GetWindowThreadProcessId(hwnd, &pid);
 
-    HMODULE mod = LoadLibraryA("test.dll");
-    func proc = (func)::GetProcAddress(mod, "getDllPoint");
+    HMODULE mod = LoadLibraryA("C:\\Users\\YJ\\Desktop\\codes\\cpp\\Dll_TEST\\x64\\Debug\\Dll_TEST.dll");
+    func proc = (func)::GetProcAddress(mod, "getDllPoint");//要注入的方法
 
     HOOKPROC fp = proc();
 
