@@ -22,6 +22,7 @@
 > 主要任务：免杀加强，二开工具
 
 * 元旦快乐！
+* 隐藏IAT https://www.bordergate.co.uk/import-address-tables/
 * CS Beacon 二开 https://tttang.com/archive/1789/
 * Fscan 二开 https://cloud.tencent.com/developer/article/2373333
 * Mimikatz 二开 免杀 https://blog.csdn.net/zhangshuaiijie/article/details/131350373 https://www.i-monero.com/post/yuan-ma-mian-sha-zhi-mimikatz/
