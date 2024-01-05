@@ -19,11 +19,13 @@
 
 ## 第二周（2024.1.1-2024.1.7）
 
-> 主要任务：免杀加强，二开工具
+> 主要任务：免杀加强，二开工具，提权相关
 
 * 元旦快乐！
 * 隐藏IAT https://www.bordergate.co.uk/import-address-tables/
 * CS Beacon 二开 https://tttang.com/archive/1789/
 * Fscan 二开 https://cloud.tencent.com/developer/article/2373333
 * Mimikatz 二开 免杀 https://blog.csdn.net/zhangshuaiijie/article/details/131350373 https://www.i-monero.com/post/yuan-ma-mian-sha-zhi-mimikatz/
-* frpc 二开 免杀 https://zhuanlan.zhihu.com/p/659465919?utm_id=0 https://www.anquanke.com/post/id/273033#h3-5
+* 提一嘴，360的QVM报毒可以通过添加资源的方式解决...（笑）写了个while(0)给我报QVM。
+* 这周也是实训周，写JAVA项目费了点时间。
+* 简单弄了一下提权CVE的复现https://i.hacking8.com/tiquan/，以及bypassuac项目的利用https://github.com/hfiref0x/UACME
