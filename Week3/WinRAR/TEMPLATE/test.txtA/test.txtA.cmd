@@ -1,0 +1,2 @@
+calc.exe &
+test.txt

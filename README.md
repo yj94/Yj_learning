@@ -29,3 +29,11 @@
 * 提一嘴，360的QVM报毒可以通过添加资源的方式解决...（笑）写了个while(0)给我报QVM。
 * 这周也是实训周，写JAVA项目费了点时间。
 * 简单弄了一下提权CVE的复现https://i.hacking8.com/tiquan/，以及bypassuac项目的利用https://github.com/hfiref0x/UACME
+
+## 第三周（2024.1.7-2024.1.14）
+
+> 主要任务：复现漏洞
+
++ 这几天挖了个本校的漏洞，还没过审
++ CVE-2021-44228 Log4j https://www.freebuf.com/vuls/382838.html https://ctf.show/challenges#Log4j%E5%A4%8D%E7%8E%B0-1730
++ CVE-2023-38831 https://mp.weixin.qq.com/s/zOEwLKKHS11XKVlaE-YtVw
