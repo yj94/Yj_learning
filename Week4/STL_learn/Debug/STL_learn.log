@@ -1,8 +1,2 @@
-﻿  vector_useage.cpp
-D:\codes\cpp\STL_learn\vector_useage.cpp(16,20): warning C4018: “<”: 有符号/无符号不匹配
-D:\codes\cpp\STL_learn\vector_useage.cpp(21,20): warning C4018: “<”: 有符号/无符号不匹配
-D:\codes\cpp\STL_learn\vector_useage.cpp(26,20): warning C4018: “<”: 有符号/无符号不匹配
-D:\codes\cpp\STL_learn\vector_useage.cpp(32,20): warning C4018: “<”: 有符号/无符号不匹配
-D:\codes\cpp\STL_learn\vector_useage.cpp(36,20): warning C4018: “<”: 有符号/无符号不匹配
-D:\codes\cpp\STL_learn\vector_useage.cpp(51,20): warning C4018: “<”: 有符号/无符号不匹配
+﻿  list_usage.cpp
   STL_learn.vcxproj -> D:\codes\cpp\STL_learn\Debug\STL_learn.exe
