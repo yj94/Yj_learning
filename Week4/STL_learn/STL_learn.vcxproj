@@ -141,6 +141,9 @@
   <ItemGroup>
     <ClCompile Include="deque_useage.cpp" />
     <ClCompile Include="list_usage.cpp" />
+    <ClCompile Include="queue_usage.cpp" />
+    <ClCompile Include="set_usage.cpp" />
+    <ClCompile Include="stack_usage.cpp" />
     <ClCompile Include="vector_useage.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

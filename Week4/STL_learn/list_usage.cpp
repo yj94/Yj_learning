@@ -12,7 +12,7 @@ List是一个双向链表，它的每个节点都包含一个元素值和两个指针，分别指向前一个节点和
 此外，list还可以在迭代器失效的情况下进行插入和删除操作，因为它的节点通过指针连接，不会像vector和deque那样在内存重新分配时使得迭代器失效。
 */
 
-int main() {
+int list_crud() {
 	list<int> li1;
 	li1.push_back(100);//尾部插入
 	li1.push_front(200);//头部插入
@@ -37,8 +37,70 @@ int main() {
 		cout<<"反向 " << *rit << " ";
 	}
 	cout << endl;
+	//带参数构造方法
+	list<int>li2(3, 5);//(num,elem)
+	list<int>::iterator itt;
+	for (itt = li2.begin(); itt != li2.end(); itt++) {
+		cout << "参数构造方法1 " << *itt << " ";
+	}
+	cout << endl;
+	list<int>li3(li1.begin(), li1.end());//(beg,end) 不能使用+运算符 只能使用迭代器
+	list<int>::iterator ittt;
+	for (ittt = li3.begin(); ittt != li3.end(); ittt++) {
+		cout << "参数构造方法2 " << *ittt << " ";
+	}
+	cout << endl;
+	list<int>li4(li1);//(const &list)
+	list<int>::iterator itttt;
+	for (itttt = li4.begin(); itttt != li4.end(); itttt++) {
+		cout << "参数构造方法3 " << *itttt << " ";
+	}
+	cout << endl;
+	//list赋值 assgin,swap,insert
+	//insert(pos,elem) ..(pos,n,elem) ..(pos,beg,end)
+	//list大小 size()返回元素个数 resize()重定义容器长度 默认值填充 超出元素删除 empty()判断是否为空
+	//list删除 clear()全部 erase(beg,end)左闭右开 erase(pos)返回删除位置的下一个位置 remove(elem)
+	//list反序 reverse()
 
-
+	system("pause");
+	return 0;
+}
+int list_it() {
+	list<int>li1(6, 6);//(num,elem)
+	list<int>::iterator itt;
+	li1.push_front(1);
+	li1.push_back(9);
+	for (itt = li1.begin(); itt != li1.end(); itt++) {
+		cout << "li1元素 " << *itt << " ";
+	}
+	cout << endl;
+	
+	/*
+	//报错
+	for (itt = li1.begin(); itt != li1.end(); ) {
+		if (*itt == 6) {
+			li1.erase(itt);
+		}
+		else {
+			itt++;
+		}
+	}
+	cout << endl;
+	*/
+	//正确
+	for (itt = li1.begin(); itt != li1.end(); ) {
+		if (*itt == 6) {
+			itt=li1.erase(itt);
+		}
+		else {
+			itt++;
+		}
+	}
+	for(itt = li1.begin(); itt != li1.end(); itt++) {
+		cout << "删除后li1元素 " << *itt << " ";
+	}
+	cout << endl;
+	cout << endl;
 	system("pause");
 	return 0;
 }

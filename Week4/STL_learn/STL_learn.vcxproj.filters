@@ -24,5 +24,14 @@
     <ClCompile Include="list_usage.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="stack_usage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="queue_usage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="set_usage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
