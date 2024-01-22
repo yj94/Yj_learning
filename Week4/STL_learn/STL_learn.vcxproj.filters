@@ -33,5 +33,11 @@
     <ClCompile Include="set_usage.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="func_usage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="map_usage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

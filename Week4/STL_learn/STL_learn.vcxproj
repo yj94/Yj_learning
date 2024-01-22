@@ -140,7 +140,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="deque_useage.cpp" />
+    <ClCompile Include="func_usage.cpp" />
     <ClCompile Include="list_usage.cpp" />
+    <ClCompile Include="map_usage.cpp" />
     <ClCompile Include="queue_usage.cpp" />
     <ClCompile Include="set_usage.cpp" />
     <ClCompile Include="stack_usage.cpp" />
