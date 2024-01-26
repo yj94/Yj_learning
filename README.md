@@ -41,13 +41,19 @@
 
 ## 第四周（2024.1.15-2024.1.21）
 
-> 主要任务：STL简单实现、科目一
+> 主要任务：STL容器、科目一
 
++ 放假了，出去玩
 + 这周因为种种原因摆了好几天
++ 只熟悉了STL各大容器的CRUD和其中注意点 参考https://www.bilibili.com/video/BV1D24y1e7nz/
 
 ## 第五周（2024.1.22-2024.1.28）
 
-> 主要任务：STL逆向，STL实现，科目一
+> 主要任务：~~STL逆向，STL实现~~，软件分析，CodeQL，科目一，软著项目
 
-+ 逆向参考https://www.52pojie.cn/forum.php?mod=viewthread&tid=1720719 https://bbs.kanxue.com/thread-275133.htm
-+ 实现参考https://qlipphoth.github.io/2023/08/19/2023-8-19-1/
++ ~~逆向参考https://www.52pojie.cn/forum.php?mod=viewthread&tid=1720719 https://bbs.kanxue.com/thread-275133.htm~~
++ ~~实现参考https://github.com/Alinshans/MyTinySTL https://qlipphoth.github.io/2023/08/19/2023-8-19-1/ https://github.com/Qlipphoth/TinySTL~~
++ *之所以把任务减少了，是因为STL这玩意也太难了，数据结构，C++各种声明我都还没用过*
++ https://ranger-nju.gitbook.io/static-program-analysis-book/
++ 主要花时间看一下 南京大学《软件分析》https://www.bilibili.com/video/BV1b7411K7P4/
++ 这周写C#居多，回归老本行，写C#是真的舒服！
