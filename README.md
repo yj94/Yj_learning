@@ -63,4 +63,37 @@
 
 > 主要任务：CodeQL，软件分析，科目一
 
-+ TODO
++ 回家了
++ ~~太过于学术的知识完全学不下去~~
+
+## 第七周（2024.2.5-2024.2.11）
+
+> 主要任务：摆摊、休息、过年
+
++ 摆摊卖春联（龙年限定）卖不完只能12年后再卖了
++ 摆摊第一天：回本三分之一
++ 摆摊第二天：下雨 回本0
++ 摆摊第三天：回50
++ 摆摊第四天：除夕快乐，准备结束
++ 亏损150人民币
+
+## 第八周（2024.2.12-2024.2.18）
+
+> 主要任务：重拾pwn
+
++ gdb巩固
++ pip install pip -U
++ pip config set global.index-url https://mirrors.aliyun.com/pypi/simple
++ pip config set install.trusted-host mirrors.aliyun.com
+
+## 第九周（2024.2.19-2024.2.25）
+
+> 主要任务：pwn
+
++ test
+
+## 第十周（2024.2.26-2024.3.3）
+
+> 主要任务：pwn
+
++ https://www.yuque.com/hxfqg9/
