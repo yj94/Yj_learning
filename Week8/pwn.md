@@ -3,6 +3,7 @@
 + 技巧总结 https://www.cnblogs.com/xshhc/p/16939678.htmlz
 + 二进制资料 https://abcdxyzk.github.io/blog/cats/assembly/
 + 参考 https://www.yuque.com/hxfqg9/bin
++ ![1708946346737](image/pwn/1708946346737.png)
 
 ## 做题笔记
 
@@ -29,3 +30,7 @@ Canary存在ebp之前 其大小取决于程序的bit 0x04 0x08
 + 32：pop,a,b,c,d,ret execve调用号 0xb写在pop,a后 其余两个寄存器覆盖0 p32(0) 最后执行int80 addr
 + 64：传参的寄存器是rdi->rsi->rdx->rcx->r8->r9 execve调用号 0x3b 最后执行syscall addr
 + ![1708929874831](image/pwn/1708929874831.png)
+
+### UAF
+
++ use after free
