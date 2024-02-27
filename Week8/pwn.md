@@ -34,3 +34,11 @@ Canary存在ebp之前 其大小取决于程序的bit 0x04 0x08
 ### UAF
 
 + use after free
++ 内存空间未被设置NULL的使用
+
+### ret2csu
+
++ https://ctf-wiki.org/en/pwn/linux/user-mode/stackoverflow/x86/medium-rop/
++ 1.查找利用gadgets ![1709018072974](image/pwn/1709018072974.png)![1709018199735](image/pwn/1709018199735.png)
++ 2.给寄存器赋值 按照64的参数顺序![1709018264113](image/pwn/1709018264113.png)
++ 3.泄露write地址 使得程序重新运行main函数，根据libc基地址计算system函数和binsh字符串的真实地址，构造ROP链![1709018463535](image/pwn/1709018463535.png)
