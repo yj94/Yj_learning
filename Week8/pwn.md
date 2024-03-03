@@ -11,6 +11,8 @@
 
 Canary存在ebp之前 其大小取决于程序的bit 0x04 0x08
 
+https://cloud.tencent.com/developer/article/1740319
+
 1. Payload_Leak = Padding + p64(Canary) + Padding_Ret + p64(rdi) + p64(puts_got) + p64(puts_plt) + p64(main)
 2. Payload_Shell = Padding + p64(Canary) + Padding_Ret + p64(ret) + p64(rdi) + p64(binsh) + p64(system)
 
@@ -66,3 +68,27 @@ Canary存在ebp之前 其大小取决于程序的bit 0x04 0x08
           print(chr(int(num,16)),end="")
           i = i-2
   ```
+
+### StackSmash
+
++ https://blog.csdn.net/m0_74020775/article/details/129858952
++ canary检查到不同时，报StackSmash错，输出$__libc_argv[0] 第一个环境变量 也就是程序本身目录，构造ROP链达到输出想要的内容
+
+### 栈迁移
+
++ 对于只能溢出覆盖掉一个地址大小的栈。开启NX，no-pie，栈迁移到bss段
++ 计算出当前溢出后得到的ebp与pre main ebp计算，得到偏移，到达迁移后的栈。给足所需字符串字节大小。'/bin/sh\x00'=16bytes。call sys,ret
++ 栈迁移是一种技术，用于在利用漏洞时控制程序的执行流。它通常用于绕过保护机制，如栈溢出。
+  栈迁移的核心在于使用两次 leave; ret 指令：
+  第一次 leave 指令将 ESP 设置为 EBP 的值，即栈顶和栈底指向同一位置。
+  然后执行 pop ebp，将栈顶的内容弹入 EBP，此时栈顶的内容也就是 EBP 的内容。
+  第二次 leave 指令执行后，ESP 移动到了 EBP 的位置，再次执行 pop ebp，将栈顶的内容弹给 EBP。
+  此时控制流跳转到返回地址，实现了栈迁移。
+
+### off_by_null
+
++ 只溢出一个字节 通常是\x0 null byte
+
+### nop_sled
+
++ 插入大量NOP指令，增加访问到自己的shellcode的领空概率
