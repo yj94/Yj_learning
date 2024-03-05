@@ -7,6 +7,10 @@
 
 ## 做题笔记
 
+### ROP
+
++ padding+rdi_ret+sh_str+ret+sys
+
 ### Canary leak
 
 Canary存在ebp之前 其大小取决于程序的bit 0x04 0x08
@@ -92,3 +96,13 @@ https://cloud.tencent.com/developer/article/1740319
 ### nop_sled
 
 + 插入大量NOP指令，增加访问到自己的shellcode的领空概率
+
+### strlen
+
++ 若程序read(buf,0x100) 但buf只有0x50大小，紧接着程序判断
++ ```c
+  int len=strlen(buf);
+  if (len>0x50)
+  	return(0);
+  ```
++ 我们可以使用payload=b'\x00'+padding-1来绕过这个判断
