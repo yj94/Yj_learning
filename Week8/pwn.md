@@ -5,11 +5,15 @@
 + 参考 https://www.yuque.com/hxfqg9/bin
 + ![1708946346737](image/pwn/1708946346737.png)
 
-## 做题笔记
+## 做题笔记-stack
 
 ### ROP
 
 + padding+rdi_ret+sh_str+ret+sys
+
+### LeakLibc
+
++ padding+(canary+bit[if exist])+rdi_ret+puts_got+puts_plt+leak_print_addr
 
 ### Canary leak
 
@@ -36,11 +40,6 @@ https://cloud.tencent.com/developer/article/1740319
 + 32：pop,a,b,c,d,ret execve调用号 0xb写在pop,a后 其余两个寄存器覆盖0 p32(0) 最后执行int80 addr
 + 64：传参的寄存器是rdi->rsi->rdx->rcx->r8->r9 execve调用号 0x3b 最后执行syscall addr
 + ![1708929874831](image/pwn/1708929874831.png)
-
-### UAF
-
-+ use after free
-+ 内存空间未被设置NULL的使用
 
 ### ret2csu
 
@@ -80,6 +79,7 @@ https://cloud.tencent.com/developer/article/1740319
 
 ### 栈迁移
 
++ https://xz.aliyun.com/t/12738
 + 对于只能溢出覆盖掉一个地址大小的栈。开启NX，no-pie，栈迁移到bss段
 + 计算出当前溢出后得到的ebp与pre main ebp计算，得到偏移，到达迁移后的栈。给足所需字符串字节大小。'/bin/sh\x00'=16bytes。call sys,ret
 + 栈迁移是一种技术，用于在利用漏洞时控制程序的执行流。它通常用于绕过保护机制，如栈溢出。
@@ -106,3 +106,42 @@ https://cloud.tencent.com/developer/article/1740319
   	return(0);
   ```
 + 我们可以使用payload=b'\x00'+padding-1来绕过这个判断
+
+### 数组越界写
+
++ // 数组越界写
+  puts("Here is the seat from 0 to 9, please choose one.");
+  __isoc99_scanf("%d", &v0);
+  read(0, &seats[16 * v0], 0x10uLL);
++ //.bss:00000000004040A0                               public seats
++ ![1710059269098](image/pwn/1710059269098.png)
++ 0x404040达到got.plt的exit函数 可构造返回函数ROP
++ 通过返回到main二次构造ROP 泄露libc_base后加上one_gadget构造exp
+
+
+## 做题笔记-heap
+
+> https://bbs.kanxue.com/thread-246786.htm
+>
+> https://www.cnblogs.com/luoleqi/p/12840154.html
+
+### heap
+
++ https://www.freebuf.com/articles/endpoint/371095.html
++ malooc，free
+
+### UAF
+
++ use after free
++ 内存空间未被设置NULL的使用
+
+### patchelf
+
++ ```
+  patchelf --set-interpreter 你的文件目录/ld-linux-x86-64.so.2 ./pwn
+
+  patchelf --add-needed 你的文件目录/libc.so.6 ./pwn
+
+  patchelf --add-needed 你的目录/libpthread.so.0 ./pwn （如果提示没有libpthread.so.0的话）
+  ```
++
