@@ -207,3 +207,34 @@ https://cloud.tencent.com/developer/article/1740319
 
     ```
   + 需要注意的是：泄露的返回地址填main或者_start的地址，对于发出的binsh字符串要符合8大小
+
+### rop 注意事项
+
++ 32位的rop
+  + 构造时是p32(backdoor) + p32(0) + p32(binsh)
+  + 每个函数的开始之前都会执行eip然后压ebp，其中的0作为ret使用
+  + 或者使用p32(call_system)+p32(binsh) 就不用0
++ 64位的rop
+  + 构造时是p64(pop_rdi_ret) + p64(binsh) + p64(system)
+  + 为什么会用到pop_rdi_ret?(通常存在csu的最后r15后一个字节)
+  + pop rdi 目的是为了让binsh作为我们system的参数，而ret是作为执行eip到我们的system函数
++ 栈对齐
+  + 目的：ubuntu18(glibc2.27)及以上在调用system函数的时候会先进行一个检测，如果此时的栈没有16字节对齐的话，就会强行把程序crash掉，所以需要栈对齐。
+  + 64下：b'a'*offset + p64(ret) + p64(pop_rdi_ret) + p64(binsh) + p64(system)
+  + ret：rsp执行的8字节送入rip，然后**rsp+8**
+  + 而这里的ret只用于栈对齐共两个ret 栈与16字节对齐既0x10
++ 栈迁移
+  + 栈迁移为什么用到leave，ret指令
+  + 32下：leave=mov esp,ebp;pop ebp;
+    ret=pop eip
+  + 我们栈溢出控制了ebp间接的控制了esp的值，再通过eip控制执行
+  + 流程：leave：ebp被复制到esp上，且有4个字节数据，若这时我们输入的是8个'a'则会在esp看到4个'a'数据（数据开头）然后弹出ebp将数据开头前4个字节作为ebp的值
+    ret：将eip修改为padding后的地址数据 通常为我们system函数的地址
+  + 
+
+### fmt相关
+
++ fmt
+  + 格式化字符串中 addr%n\$n 和 addr%n\$s 为什么可以实现任意地址写和任意地址读。
+  + printf 函数执行的时候调用的参数实际上是存在着该参数数据的地址，而存在着该参数数据的地址也在栈上，并且是与 printf 的参数有一定偏移，因此我们就可以确定该参数数据的地址是 pintf 函数的第几个参数，这也是我们要调试出偏移的目的。并且因为参数数据是可控的，我们可以写入参数数据为某一内存地址，利用 %n\$n/s 来将参数数据作为地址调用，那么就可以实现任意地址写和任意地址读。
++
