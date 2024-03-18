@@ -121,7 +121,9 @@
 
 > 主要任务：re、pwn、争取rt！
 
-+ todo
-+ https://xz.aliyun.com/t/13592
-+ https://xz.aliyun.com/t/12498
-+ https://xz.aliyun.com/t/14075
++ 准备看的文章
+  + https://xz.aliyun.com/t/13592
+  + https://xz.aliyun.com/t/12498
+  + https://xz.aliyun.com/t/14075
+  + https://xz.aliyun.com/t/14076
++ 简单搞了一下re题的算法和标识的笔记 待完善...
