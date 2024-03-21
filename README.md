@@ -122,8 +122,11 @@
 > 主要任务：re、pwn、争取rt！
 
 + 准备看的文章
-  + https://xz.aliyun.com/t/13592
-  + https://xz.aliyun.com/t/12498
-  + https://xz.aliyun.com/t/14075
-  + https://xz.aliyun.com/t/14076
+  + https://xz.aliyun.com/t/13592 域渗透票据
+  + https://xz.aliyun.com/t/12498 域渗透隧道
+  + https://xz.aliyun.com/t/14075 白加黑
+  + https://xz.aliyun.com/t/14076 后渗透
 + 简单搞了一下re题的算法和标识的笔记 待完善...
++ 准备给软路由加个ARL https://github.com/TophantTechnology/ARL
++ https://zhuanlan.zhihu.com/p/656652577 PVE加装WIFI
++ https://github.com/Neo-Maoku/DllMainHijacking
