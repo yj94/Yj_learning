@@ -243,6 +243,11 @@
             + 将客户端本地的请求通到我们客户端开启的pingtunnel的2222端口下
       + SPP
         + https://forum.butian.net/index.php/share/400
+        + https://xz.aliyun.com/t/9820
         + https://github.com/esrrhs/spp
         + VPS
-          + todo
+
+          + ./spp -type server -proto ricmp -listen 0.0.0.0
+        + Client
+
+          + ./spp -name "test" -type reverse_socks5_client -server vps -fromaddr :4444 -proxyproto tcp -proto ricmp

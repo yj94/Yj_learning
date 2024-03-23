@@ -119,7 +119,7 @@
 
 ## 第十三周（2024.3.18-2024.3.24）
 
-> 主要任务：re、pwn、争取rt！
+> 主要任务：re、pwn、争取hw！、读文章
 
 + 准备看的文章
   + https://xz.aliyun.com/t/13592 域渗透票据
@@ -130,3 +130,11 @@
 + 准备给软路由加个ARL https://github.com/TophantTechnology/ARL
 + https://zhuanlan.zhihu.com/p/656652577 PVE加装WIFI
 + https://github.com/Neo-Maoku/DllMainHijacking
++ https://zhuanlan.zhihu.com/p/578966149
++ 学一下z3的具体解法
+
+## 第十四（2024.3.25-2024.3.31）
+
+> 主要任务：re、备国赛
+>
+> 这周末要长城杯了 且24届的专升本也开考了 祝所有人顺利
