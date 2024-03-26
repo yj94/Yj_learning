@@ -133,8 +133,29 @@
 + https://zhuanlan.zhihu.com/p/578966149
 + 学一下z3的具体解法
 
-## 第十四（2024.3.25-2024.3.31）
+## 第十四周（2024.3.25-2024.3.31）
 
-> 主要任务：re、备国赛
+> 主要任务：re、备国赛、争取hvv
 >
 > 这周末要长城杯了 且24届的专升本也开考了 祝所有人顺利
+
++ 写了下远程下载的马，被360QVM杀了，下载到本地这个create一个file流的操作还是太敏感了
++ 总结下自己写的免杀方案吧(粗略)
+  + 单文件
+    + 反沙箱(time,ip,ram,cpu,disk...)
+    + shellcode加密(xor,aes,des...)
+    + 少见的内存alloc函数 并且自己typedefine一个struct函数用
+    + 关键字符串进行执行时解密防止静态扫描到
+    + 给关键代码行添加junkcode
+    + 注入线程防止留下不可靠的pid，用可靠的ppid
+    + 加壳
+  + 多文件
+    + 白加黑
+    + 远程下载执行
++ https://forum.butian.net/share/2772 看到一个远程下载bypass的思路 准备实践
+  + 实现了 挺好用的 就是会有浏览器窗口的打开
++ https://forum.butian.net/share/2669 看到一个免杀相关思路 准备实践
+  + 答辩文章
+  + 但发现一个好网站https://www.ired.team/
++ https://forum.butian.net/share/2778 看到一个挖支付相关漏洞的思路 准备做笔记
+  + 比较不详细，但总结的还行
