@@ -131,11 +131,11 @@
 + https://zhuanlan.zhihu.com/p/656652577 PVE加装WIFI
 + https://github.com/Neo-Maoku/DllMainHijacking
 + https://zhuanlan.zhihu.com/p/578966149
-+ 学一下z3的具体解法
++ ~~学一下z3的具体解法~~还是不会
 
 ## 第十四周（2024.3.25-2024.3.31）
 
-> 主要任务：re、备国赛、争取hvv
+> 主要任务：re、备国赛、争取hvv、web
 >
 > 这周末要长城杯了 且24届的专升本也开考了 祝所有人顺利
 
@@ -160,3 +160,5 @@
 + https://forum.butian.net/share/2778 看到一个挖支付相关漏洞的思路 准备做笔记
   + 比较不详细，但总结的还行
 + 报名了英语六级，6月15日考试，不知道会不会和国赛冲突，没事，激励自己学习的动力！
++ 写了一个动态调试的re题目 比较有趣 https://www.nssctf.cn/note/set/6182
++ 剩下的时间复习点web吧，毕竟作为CTF的大头方向
