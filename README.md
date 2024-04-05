@@ -167,12 +167,20 @@
 
 ## 第十五周（2024.4.1-2024.4.7）
 
-> 打比赛、复习NISP二级、争取hvv
+> 打比赛、复习NISP二级、争取hvv、re、pwn
 
 + https://xz.aliyun.com/t/14215
   + 一个免杀总结
 + https://xz.aliyun.com/t/14201
   + C2 识别 考虑复现
+  + 答辩，简短没啥用，像是FOFA的广告
 + 红明谷说实话有点可惜，第36名，自己还是太菜了。misc crypto web，就是没有re...
 + hvv相关的东西还是需要掌握完全一点，毕竟自己的经验实在是太少了（没有人脉）
 + 祝大家清明安康！
++ https://xz.aliyun.com/t/14234
+  + c2 识别 赛题
++ https://ctf.0xff.re/ CTFreWP
++ fuzz https://www.cnblogs.com/cx1ng
++ binary exp https://bbs.kanxue.com/homepage-930159.htm
++ SMC SEH
++ https://bbs.kanxue.com/thread-271891.htm linux 异常处理隐藏bytes
