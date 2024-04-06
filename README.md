@@ -184,3 +184,10 @@
 + binary exp https://bbs.kanxue.com/homepage-930159.htm
 + SMC SEH
 + https://bbs.kanxue.com/thread-271891.htm linux 异常处理隐藏bytes
++ 莫名其妙的突然想出题，出了两道web一道re，算了以后再次举办比赛的时候再出吧，耗费时间
+
+## 第十六周（2024.4.8-2024.4.14）
+
+> 临近NISP二级备考
+
++ todo
