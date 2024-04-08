@@ -185,6 +185,12 @@
 + SMC SEH
 + https://bbs.kanxue.com/thread-271891.htm linux 异常处理隐藏bytes
 + 莫名其妙的突然想出题，出了两道web一道re，算了以后再次举办比赛的时候再出吧，耗费时间
+  + 3web 3crypto 3re 4misc
++ https://xz.aliyun.com/t/12808
+  + 内存马查杀工具
++ https://github.com/Getshell/Mshell
++ https://blog.csdn.net/snowlyzz/article/details/128695272
++ http://47.108.150.136:8080/IDS/
 
 ## 第十六周（2024.4.8-2024.4.14）
 
