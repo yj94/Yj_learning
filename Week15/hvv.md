@@ -70,6 +70,30 @@
   + https特征，空证书或默认证书或伪造大厂证书建立加密通道
   + dns特征，默认使用cdn,www6,api,www,post,为请求头发起dns请求 返回结果一般为非常规ip
   + 心跳包，有规律的通信
++ ICMP马
+
+  + 请求type=8，响应type=0，请求过于重复，数量多
++ frp
+
+  + 流量明文带有version,os,arch,privilege_key信息
++ 从协议来看是看不出什么的，从请求来看，可以发现每个请求都会有对应的返回包，且端口总是其中一个是固定的
+
+  + SPP
+  + IOX
++ reGeorg
+
+  + 通过整个http隧道的建立过程的流量分析，可以看到起初是通过tunnel.jsp，connect内网指定ip的指定端口，然后read读取，通告其内容编码为identity，采用分块传输，最后disconnect关闭连接
+
+## 日志分析
+
++ sql
+  + 报错注入函数
+    + exp
+    + ypdatexml
+    + extractvalue
+  + 盲注
+    + 有规律的重复SQL语句，个别不同
++ 
 
 ## IP
 
@@ -164,7 +188,7 @@
   + set_time_limit(0);时间限制0
   + `unlink(__FILE__);`删除自身
   + 无限循创建木马.shell.php 并且usleep(5000)休眠5秒
-  + 措施：同名覆盖，kill -9 pid
+  + 措施：同名覆盖，kill -9 pid，重启php服务器
 + python
 + java
 
@@ -178,7 +202,7 @@
   + 特征：aced0005，rO0AB 开头 都为反序列化
   + 对用户输入数据进行反序列化处理
   + ObjectinputFilter校验反序列化的类，Hook resolveClass校验
-+ 
++ 措施：阿里巴巴的arthas，VisualVM
 
 ## HTTP请求走私
 
@@ -192,3 +216,75 @@
 + 发送带CL-TE，前端处理CL，后端TE，因规范，CL应该忽略，导致请求附带
 + 与上面相反
 + TETE 都请求Transfer-Encoding，但可能请求Transfer-encoding导致请求附带
+
+
+## 研判
+
++ 判断
+
+  + 可误报但不可漏报
+  + 设备的告警信息，数据包请求包请求体返回包返回体，响应200的重点关注
+  + 对可疑IP的请求为索引，查看现在请求和过去请求
+  + UA头
+  + 复现请求
+    + 使用自己热点
++ 思路
+
+  + 攻击的方向确定，内外，外内，内内
+  + 是什么，什么时候，成功与否，之前的请求
+  + 攻击者IP情报搜集
+  + 样本分析
+
+## 溯源
+
++ 捕获 处置 画像
++ 捕获
+
+  + 钓鱼邮件
+  + 安全设备记录的日志 流量数据分析
+  + 蜜罐溯源追踪
++ 处置
+
+  + 域名whois
+  + IP
+  + 身份
+  + 证书
+  + 文件
+  + 样本
++ 画像
+
+  + 攻击路径
+  + 攻击目的
+  + 代理手段
+  + 攻击手段
+  + 身份
+    + 网名 id 昵称
+    + 姓名 家庭 办公地址
+    + 手机号qq微信 邮箱
+    + 单位每次 职位
++ 经历
+
+  + 收到一个ip
+  + 查询ip归属地为 马来西亚
+  + 使用nmap简单探测，第二次发现被封ip
+  + 使用在线的端口探测工具扫描得到22 3306
+  + 使用代理上AWVS扫描成功得到一个php的RCE漏洞
+  + 验证后反弹shell，先执行set +o history 关闭历史记录 后使用history -d id 删除刚刚的记录
+  + last查看最近登陆信息 都为本机ip，uname -a 查看内核版本 查看是否有提权漏洞 放弃
+  + netstat -ano 导出ip 发现有一个中国阿里云节点ip，还有一个俄罗斯ip
+  + top 查看占用CPU的进程 发现一个kdevtmpfsi进程，搜索后发现是个挖矿木马 占用大 并使用systemctl status pid 查看进程 发现有守护进程 kill -9 结束掉 find / -name 通配符匹配木马名字 rm -rf 删除
+  + 再次netstat -ano 发现俄罗斯ip已经不见了，应该是挖矿池的key
+  + 在线端口扫描阿里云服务器 查到80端口，考虑dirsearch一下 无果
+  + 深入查找端口 nmap全端口探测一下，发现8088 tomcat服务，并且使用弱口令成功进入使用 jar cvf test.war test.jsp 部署war包木马 成功反弹shell
+  + last 查看最近登陆信息 有香港 台湾 马来西亚的
+  + histroy中也查到 nc 马来西亚ip的痕迹，其中有个记录看到一个ip访问得到是一个在线的ARL灯塔资产收集，默认密码直接进去，发现是一个正在使用的资产收集平台。对此ip进行反查，得到域名解析记录，whois查询得到所有者的手机号 邮箱 姓名，通过qq邮箱的qq查到个人资料卡，承接各种渗透测试服务，后续进行社工库查询，得到住址老密身份证信息。
++ 经历
+
+  + 收到一个域名，此域名套用CF，且服务器已经关闭，没有备案信息。
+  + 谷歌搜索不到结果，要放弃的时候，使用github查域名，得到了一个mysql连接的docker-compose 代码片段，得到数据库连接密码 以及ip地址
+  + navicat连接不上，但访问此代码片段的8080服务得到一个类似OA的界面
+  + 弱口令admin/admin进去了（竟然是以admin?user=admin&password=admin的），发现一个文件管理可直接下载文件，VPN使用手册201903.doc pass.txt VPNclient64.zip
+  + 下载文件得到一个VPN客户端（图标有点怪）
+  + 拖入虚拟机分析，火绒剑打开提示（当前系统不兼容）考虑开启了anti-vm
+  + 但发现进程的图标是一个书信笔，经典的python tk库gui
+  + pyinstxtractor.py 对exe解包后得到pyc字节码文件 使用pycdc解密得到后门的main函数中调用了一个test函数 其中是解密执行恶意shellcode代码。对shellcode提取，找到其中的c2ip地址:xxx.cn 查询dns解析得到一个浙江ip，whois反查也成功得到姓名邮箱，其中邮箱在微信公众号中搜索得到一个公众号信息。
