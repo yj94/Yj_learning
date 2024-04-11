@@ -194,6 +194,10 @@
 
 ## 第十六周（2024.4.8-2024.4.14）
 
-> 临近NISP二级备考
+> 临近NISP二级备考、hvv、re、应急响应、iotcve复现
 
-+ jar cvf test.war test.jsp
++ war包木马部署 jar cvf test.war test.jsp
++ hifish
++ https://xz.aliyun.com/t/13839 内网相关
++ https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-28354
++ https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-29385

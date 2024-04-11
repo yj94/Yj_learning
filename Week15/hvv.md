@@ -217,7 +217,6 @@
 + 与上面相反
 + TETE 都请求Transfer-Encoding，但可能请求Transfer-encoding导致请求附带
 
-
 ## 研判
 
 + 判断
@@ -288,3 +287,31 @@
   + 拖入虚拟机分析，火绒剑打开提示（当前系统不兼容）考虑开启了anti-vm
   + 但发现进程的图标是一个书信笔，经典的python tk库gui
   + pyinstxtractor.py 对exe解包后得到pyc字节码文件 使用pycdc解密得到后门的main函数中调用了一个test函数 其中是解密执行恶意shellcode代码。对shellcode提取，找到其中的c2ip地址:xxx.cn 查询dns解析得到一个浙江ip，whois反查也成功得到姓名邮箱，其中邮箱在微信公众号中搜索得到一个公众号信息。
+
+## 提权
+
++ windwos
+
+  + 补丁系统提权
+
+    + systeminfo获取补丁信息
+    + 补丁对比使用 https://i.hacking8.com/tiquan/
+    + 利用对应CVE的EXP来实现提权
+  + UAC
+
+    + https://github.com/hfiref0x/UACME
+  + 口令窃取提权
+
+    + Juicypotato
+      + 如果开启SeImpersonate权限，juicypotato的参数可以使用-t t
+      + 如果开启SeAssignPrimaryToken权限，juicypotato的参数可以使用-t u
+  + 组策略配置提权
+  + 第三方应用漏洞提权
++ linux
+
+  + suid提权
+  + 计划任务提权 最经典的就是配合redis
+  + mysql提权 UDF
+  + docker提权
+  + ssh密钥提权
+  + 内核提权uname -a再 searchsploit
