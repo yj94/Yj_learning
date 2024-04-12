@@ -8,6 +8,7 @@
 
 **Firmware Link** : You can download firmware at ([https://www.mydlink.co.kr/2013/beta_board/product_detail.php?no=146&amp;model=DIR-845L](https://www.mydlink.co.kr/2013/beta_board/product_detail.php?no=146&model=DIR-845L))![1712906917761](image/poc/1712906917761.png)
 
+**emulate firmware by using FirmAE([https://github.com/pr0v3rbs/FirmAE](https://github.com/pr0v3rbs/FirmAE))**
 
 ### Vulnerabilities Summary
 
@@ -111,7 +112,7 @@
   + Can be noticed, however, STRSTR used in string check, which suggests that the SOAPAction header just includes the http://purenetworks.com/HNAP1/GetDeviceSettings string, can through the inspection, to bypass the authentication.
     So, if SOAPAction header contains the string http://purenetworks.com/HNAP1/GetDeviceSettings, The code resolves the name of the Action (such as GetDeviceSettings) from the request header and removes the double quotation marks at the end of the string
 + also could cause CSRF but command injection is critical
-+ poc
++ poc when it posted,it will open telnet service on port 9090
 + ```python
   import socket
   import struct
