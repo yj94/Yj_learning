@@ -197,9 +197,12 @@
 > 临近NISP二级备考、hvv、re、应急响应、iotcve复现
 
 + war包木马部署 jar cvf test.war test.jsp
+  + 备忘一下
 + hifish
+  + 实现了，还挺不错的，免费简单快速
 + https://xz.aliyun.com/t/13839 内网相关
 + https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-28354
 + https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-29385
   + https://shadowfile.inode.link/blog/2013/02/dlink-dir-815-upnp-command-injection/
 + https://paper.seebug.org/2071/
++ 提交了几个CVE不知道能不能过，好激动

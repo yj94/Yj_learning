@@ -19,5 +19,14 @@
 
   + https://paper.seebug.org/2048/
   + https://paper.seebug.org/2071/
++ 仿真
+
+  + https://www.cnblogs.com/unr4v31/p/16072562.html
++ 工具
+
+  + FirmAE
+  + https://www.du4t.cn/post/17#2%20BACKGROUND
+  + https://github.com/attify/firmware-analysis-toolkit
++ 
 
 ## 复现
