@@ -206,3 +206,4 @@
   + https://shadowfile.inode.link/blog/2013/02/dlink-dir-815-upnp-command-injection/
 + https://paper.seebug.org/2071/
 + 提交了几个CVE不知道能不能过，好激动
++ https://cv196082.gitee.io/
