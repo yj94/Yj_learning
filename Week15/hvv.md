@@ -89,7 +89,7 @@
 + sql
   + 报错注入函数
     + exp
-    + ypdatexml
+    + updatexml
     + extractvalue
   + 盲注
     + 有规律的重复SQL语句，个别不同
@@ -179,6 +179,10 @@
   + 解析发现是JNDI的扩展内容再进一步解析发现是LDAP协议的服务器查找key是exploit，当exploit是java恶意对象就可以造成RCE
 + springboot
 + 
+
+## 挖矿
+
++ **如果从流量判断挖矿木马，需要确认是否有挖矿协议流量，常见的有开头jsonrpc、Stratum之类的协议流量。**
 
 ## 内存马
 

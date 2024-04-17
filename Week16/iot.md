@@ -96,5 +96,3 @@
 ### ASUS
 
 [https://www.asus.com.cn/support/](https://www.asus.com.cn/support/)
-
-## 复现

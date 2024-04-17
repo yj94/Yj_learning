@@ -163,6 +163,9 @@
 + 写了一个动态调试的re题目 比较有趣 https://www.nssctf.cn/note/set/6182
 + 剩下的时间复习点web吧，毕竟作为CTF的大头方向
 + 长城杯web 0解 虽然简单 但是真没花时间去 而且也中道崩殂 但是也勉强进了半决赛了
+  + 更新-没进半决赛，逆天主办方VPN并发只有1000导致赛区人数不准 浙江等大省并入后无法晋级
+  + 完全可以让人数平均点，而不是分赛区，难度对我们来说太大了，沿海全是人...明明理论题已经很逆天了
+  + 7月吸取教训继续打第二届
 + 专升本下次就到我了，有点紧张。总感觉这周很漫长，也许是漫无目的的原因，希望四月顺利！
 
 ## 第十五周（2024.4.1-2024.4.7）
@@ -189,21 +192,57 @@
 + https://xz.aliyun.com/t/12808
   + 内存马查杀工具
 + https://github.com/Getshell/Mshell
+  + 内存马攻防研究
 + https://blog.csdn.net/snowlyzz/article/details/128695272
+  + weblogic T3协议解析 hvv面试需要
 + http://47.108.150.136:8080/IDS/
+  + 一个在线流量包检测
 
 ## 第十六周（2024.4.8-2024.4.14）
 
 > 临近NISP二级备考、hvv、re、应急响应、iotcve复现
 
 + war包木马部署 jar cvf test.war test.jsp
+
   + 备忘一下
 + hifish
+
   + 实现了，还挺不错的，免费简单快速
 + https://xz.aliyun.com/t/13839 内网相关
 + https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-28354
 + https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-29385
+
   + https://shadowfile.inode.link/blog/2013/02/dlink-dir-815-upnp-command-injection/
 + https://paper.seebug.org/2071/
+
+  + iot RCE
 + 提交了几个CVE不知道能不能过，好激动
 + https://cv196082.gitee.io/
+
+  + 博客
++ https://www.cnblogs.com/VxerLee/p/16427304.html
+
+  + iot 包括购买设备
++ https://paper.seebug.org/3137
+
+  + 创宇404貌似是抄别人的，也不标注一下，原来链接找不到了，就记录下这个吧
++ https://zhuanlan.zhihu.com/p/656521191
+
+  + 单网卡多ip 教程
++ 大蒜fuzzer（以后再买）
+
+  + 第一课 RADASM 任意代码执行漏洞 https://mp.weixin.qq.com/s/U9dq7TnfA8AaGsJGeLNu1w
+    第二课 第2-4个目标https://mp.weixin.qq.com/s/8LsJGheGSEAjDynvKOj9Hg
+    第三课 潜在的文件格式 https://mp.weixin.qq.com/s/XbKfnQm2CxuTXOYtLYxHCw
+    第四课  大结局  https://mp.weixin.qq.com/s/XbKfnQm2CxuTXOYtLYxHCw
+
+## 第十七周（2024.4.15-2024.4.21）
+
+> NISP2，hvv准备面试，fuzzer
+
++ 用findwallet寻找比特币的加密钱包文件
+  + npm install findwallet -g
+    findwallet -i .
++ https://www.cnblogs.com/rxrxrx/p/rxrxrx.html
+  + 面试题
++ https://github.com/webraybtl/PeachFuzzer
