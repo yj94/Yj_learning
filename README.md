@@ -253,4 +253,15 @@
 
 ## 第十八周（2024.4.22-2024.4.28）
 
-+ todo
+> hvv、re
+
++ wmic process where name="target.exe" get CreationDate
+  + 查询进程启动时间
++ https://mp.weixin.qq.com/s/fZ64HXkZwXQ-MZYZFGxNTQ
+  + 一个SSRF杀穿的靶机wp
++ c2反制
+  + https://github.com/ryanohoro/csbruter
+  + https://github.com/Potato-py/csIntruder
+  + cs<4.7 CVE漏洞
++ https://www.bilibili.com/read/readlist/rl472724
+  + rsa相关

