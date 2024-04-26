@@ -253,7 +253,7 @@
 
 ## 第十八周（2024.4.22-2024.4.28）
 
-> hvv、re
+> hvv、re、crypto、小工具
 
 + wmic process where name="target.exe" get CreationDate
   + 查询进程启动时间
@@ -265,3 +265,7 @@
   + cs<4.7 CVE漏洞
 + https://www.bilibili.com/read/readlist/rl472724
   + rsa相关
++ https://github.com/p1d3er/port_reuse
++ + 端口复用
++ https://github.com/p1d3er/ReuseSocks
+  + socks5端口复用
