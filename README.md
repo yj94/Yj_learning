@@ -256,16 +256,36 @@
 > hvv、re、crypto、小工具
 
 + wmic process where name="target.exe" get CreationDate
+
   + 查询进程启动时间
 + https://mp.weixin.qq.com/s/fZ64HXkZwXQ-MZYZFGxNTQ
+
   + 一个SSRF杀穿的靶机wp
 + c2反制
+
   + https://github.com/ryanohoro/csbruter
   + https://github.com/Potato-py/csIntruder
   + cs<4.7 CVE漏洞
 + https://www.bilibili.com/read/readlist/rl472724
+
   + rsa相关
 + https://github.com/p1d3er/port_reuse
 + + 端口复用
 + https://github.com/p1d3er/ReuseSocks
+
   + socks5端口复用
++ https://blog.csdn.net/Sciurdae/article/details/133843931
+
+  + 2023 SWPU NSS reverse wp
++ https://mp.weixin.qq.com/s/bCmEjZ0bQgN5MeFOZm_4_g
+
+  + nginx反代钓鱼
++ https://www.icode9.com/content-1-1126418.html
+
+  + TEA算法 python实现
+
+## 第十九周（2024.4.29-2024.5.5）
+
+> todo
+
++ todo
