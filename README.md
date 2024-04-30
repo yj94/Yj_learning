@@ -283,9 +283,13 @@
 + https://www.icode9.com/content-1-1126418.html
 
   + TEA算法 python实现
++ 写的文章通过了，好开心
+
+  + 反沙箱杂谈 求师傅们点个顶！ https://xz.aliyun.com/t/14381
 
 ## 第十九周（2024.4.29-2024.5.5）
 
-> todo
+> 运维安全赛理论、赛题复现、iscc
 
-+ todo
++ https://cdisk.imxbt.cn/s/jRfM?path=%2F
++ 文章破千阅读量了，庆祝，项目也超10个star了，庆祝！
