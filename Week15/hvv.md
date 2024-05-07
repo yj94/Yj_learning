@@ -399,6 +399,6 @@
 + 不出网
   + webshell不出网， 使用reGeorg实现正向的socks代理，探测能出网的协议:dns ICMP
   + shiro不出网，确定存在漏洞可以RCE，但不能反弹shell，使用回显漏洞检测，利用后可写webshell然后也用reGeorg实现正向代理
-  + fastjson不出网，大部分都是出网的，不出网的poc就两个，其中一个poc版本要求很限制，第二个也就只是利用连的本地执行，但是可以回显
+  + fastjson不出网，大部分都是出网的，不出网的poc就两个，其中一个poc版本要求很限制，第二个也就只是利用连的本地执行，但是可以回显，不回显就尝试写东西进静态文件，比如css，图片什么的
   + mysql UDF 原理，user define function的简称，mysql通过dll文件读取了用户自定义的函数，成功调用后启一个有管理员权限的shell 然后net localgroup administrators username /add 添加到管理员组，不过有现成的udf利用工具
   + SSRF支持的协议，http https ftp dict file php gopher

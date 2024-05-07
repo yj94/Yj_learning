@@ -293,3 +293,20 @@
 
 + https://cdisk.imxbt.cn/s/jRfM?path=%2F
 + 文章破千阅读量了，庆祝，项目也超10个star了，庆祝！
++ ISCC摆烂中...
++ https://blacknight.notion.site/trick-e971a730c35449888f40d319a1ff8de5
+
+  + 攻防tick
+
+## 第二十周（2024.5.6-2024.5.12）
+
+> 运维安全实践、赛题复现、iscc
+
++ ok 实践赛也是被判作弊了，就算没作弊也拿不到奖（安慰  赛后复现下有意思的题目吧
++ iscc这周就放题了
++ cve终于弄公开了，浪费好多时间啊（cnvd还没审
+  + https://www.tenable.com/cve/CVE-2024-33110
+  + https://www.tenable.com/cve/CVE-2024-33112
+  + https://www.tenable.com/cve/CVE-2024-33113
+  + 高危，33111是XSS罢了
++
