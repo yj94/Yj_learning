@@ -309,4 +309,5 @@
   + https://www.tenable.com/cve/CVE-2024-33112
   + https://www.tenable.com/cve/CVE-2024-33113
   + 高危，33111是XSS罢了
-+
++ https://www.cnblogs.com/zhaotianff/p/13860307.html
+  + 删除commit
