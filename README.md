@@ -311,3 +311,16 @@
   + 高危，33111是XSS罢了
 + https://www.cnblogs.com/zhaotianff/p/13860307.html
   + 删除commit
++ 记录一下nethunter的安装
+  + MIUI11 K20PRO尊享版
+  + MIUI11 用的是skymiui 酷安上找的
+  + 内核 https://github.com/DOITfit/Redmi-K20Pro-Nethunter-Project
+    + 适用于k20pro k20 尊享版有bug
+  + nethunter https://www.kali.org/get-kali/#kali-mobile  下载通用版full
+    + 使用文章
+  + TWRP
+  + magisk
+  + 刷入TWRP后 进rce先双清 然后刷入MIUI11 然后刷入magisk，先开机进系统修补boot， 然后刷入nethunter 然后刷入内核
+  + system分区不够 需要用多系统工具箱扩容
++ 准备买个nexus6p也整个nethunter
+  + https://blog.csdn.net/qq_44709006/article/details/124122937#t6
