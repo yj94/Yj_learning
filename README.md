@@ -304,14 +304,19 @@
 
 + ok 实践赛也是被判作弊了，就算没作弊也拿不到奖（安慰  赛后复现下有意思的题目吧
 + iscc这周就放题了
+
+  + 放题后排名掉了几十名
 + cve终于弄公开了，浪费好多时间啊（cnvd还没审
+
   + https://www.tenable.com/cve/CVE-2024-33110
   + https://www.tenable.com/cve/CVE-2024-33112
   + https://www.tenable.com/cve/CVE-2024-33113
   + 高危，33111是XSS罢了
 + https://www.cnblogs.com/zhaotianff/p/13860307.html
+
   + 删除commit
 + 记录一下nethunter的安装
+
   + MIUI11 K20PRO尊享版
   + MIUI11 用的是skymiui 酷安上找的
   + 内核 https://github.com/DOITfit/Redmi-K20Pro-Nethunter-Project
@@ -323,4 +328,16 @@
   + 刷入TWRP后 进rce先双清 然后刷入MIUI11 然后刷入magisk，先开机进系统修补boot， 然后刷入nethunter 然后刷入内核
   + system分区不够 需要用多系统工具箱扩容
 + 准备买个nexus6p也整个nethunter
+
   + https://blog.csdn.net/qq_44709006/article/details/124122937#t6
+  + https://www.bilibili.com/video/BV1x24y1n7Jm/
+  + https://www.52pojie.cn/thread-1847814-1-1.html
+  + 搞好了，扩容system分区重新刷system.img还是会重置大小
+  + 索性直接安装23年4月版本成功了
++ 今天晚上一面通过了，准备过几天的厂商面，希望今年蓝中1.8/8能安安稳稳的，希望不要冲突
+
+## 第二十一周（2024.5.13-2024.5.19）
+
+> 厂商面、iscc第三周、iscc wp
+
++ todo
