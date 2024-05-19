@@ -340,4 +340,18 @@
 
 > 厂商面、iscc第三周、iscc wp
 
++ 被长亭鸽了两天了，真生气，真不想磨性子，护网准备面试真是苦恼，两三天没去健身房了，废了妈的
++ iscc放题了，有概率拿一等奖，wp写完就完事了
++ ok呀，长亭漏面推迟到下周了，寄了
++ 想研究360src了 主要是软件层面的
+  + 有人有一个bypass startup的方法 公开在自己博客 被别人交了src赚了5k
+  + 作者本人本来可以赚1w+的
++ 多看点国外文章吧https://medium.com/mitre-attack
+  + https://www.shentoushi.top/att/
++ https://idiotc4t.com/
+
+## 第二十二周（2024.5.20-2024.5.26）
+
+> 数字中国半决赛、厂商面、iscc wp
+
 + todo
