@@ -374,3 +374,16 @@
 + 鬼故事 六级还有不到20天考 已经一周没背单词了
 + https://www.52pojie.cn/thread-1926574-1-1.html
   + 基于Electron的CrackMe
++ 无限debugger绕过
+  + 修改断点为false
+  + 文件覆盖
+    + 修改代码
+  + setInterval=function(){} 置空
+  + hook constructor
+  + 用火狐
+
+## 第二十三周（2024.5.27-2024.6.2）
+
+> todo
+
++ todo
