@@ -384,6 +384,36 @@
 
 ## 第二十三周（2024.5.27-2024.6.2）
 
-> todo
+> 免杀、英语、写BOF、RUST免杀、C#免杀
 
-+ todo
++ https://www.kancloud.cn/wizardforcel/gdb-tips-100
+  + gdb技巧
++ 突然发现自己VPS的ip被标记了
+  + 只是历史解析的网站标题有我的个人网站标题
++ 我的免费域名也被标记了
+  + 标记到了CS估计
++ 换ip需要3美刀，还是算了吧
+  + 有CDN就是神 不怕被溯源
++ https://xz.aliyun.com/t/13687
+  + syscall学习
++ **长亭蓝中过了！！！**
++ https://github.com/b4rth0v5k1/BOF_Beginner
+  + bof
++ https://github.com/es3n1n/no-defender
+  + wd
++ https://github.com/coldpon/ring3-hidden
++ https://github.com/HackerCalico/No_X_Memory_ShellCodeLoader
++ https://github.com/xiao-zhu-zhu/RustBypassMap
+  + 好项目 学！
++ RUST写完了 不错！
++ https://mp.weixin.qq.com/s/48-3w6yrPWqT05T52ngNZg
+  + 重新认识CS
++ https://github.com/timwhitez/Doge-Gabh
++ https://xz.aliyun.com/t/14018
+  + edr c# bypass
+
+## 第二十四周（2024.6.3-2024.6.9）
+
+> 免杀、准备国护
+
++ 最紧张的一周，国赛和护网千万不要冲突
