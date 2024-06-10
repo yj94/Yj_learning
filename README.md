@@ -409,6 +409,7 @@
 + https://mp.weixin.qq.com/s/48-3w6yrPWqT05T52ngNZg
   + 重新认识CS
 + https://github.com/timwhitez/Doge-Gabh
+  + 门集成
 + https://xz.aliyun.com/t/14018
   + edr c# bypass
 
@@ -427,4 +428,15 @@
 + 好，有个项目被鸽了，准备六级吧
 + 好，陷入消费主义陷阱，买了个没有大陆优化的VPS，还续费了自己之前的VPS共花费：150RMB
   + 用了1panel 换了CS4.9
-+
++ 弄了下分离加载的东西
++ 弄了下线程注入的东西
+
+## 第二十四周（2024.6.10-2024.6.16）
+
+> 六级、省护
+
++ 端午安康
++ https://www.vpss.cc/381.html
+  + mimikatz bypass
++ https://mp.weixin.qq.com/s/TqHhggmud6Bsna0RGy22ag
+  + lsass转储
