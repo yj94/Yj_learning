@@ -446,3 +446,6 @@
 + 才发现续费两年的VPS每个月有1T流量，不买机场了以后
   + https://jiasupanda.com/vmess-vultr
   + https://jiasupanda.com/vultr-trojan#yi_jian_bu_shu_fu_wu_qi_duan
+  + 不弄了 怕VPS被墙
++ https://fluxsec.red/etw-patching-rust
++ https://www.sektor7.net/
