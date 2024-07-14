@@ -469,8 +469,9 @@
 + 装了原版win10，扩容2t硬盘
 + https://9bie.org/index.php/
   + 大佬博客
-+ https://9bie.org/index.php/archives/865/
-  + 准备实践一下 自建验证码模型
++ ~~https://9bie.org/index.php/archives/865/~~
+  + ~~准备实践一下 自建验证码模型~~
+  + 还是花钱找api把...
 + https://9bie.org/index.php/archives/786/
   + 有意思的win10输入法词频取证
 
@@ -483,3 +484,14 @@
 + 究极难忘的一次项目
 + 涉密就不说了
 + 喜欢贵州！
++ 对了这几天电脑还被上马了，还好几分钟就排查隔离了
+
+## 第二十八周（2024.7.8-2024.7.14）
+
+> 毕业季
+
++ https://github.com/veo/vshell
++ https://mp.weixin.qq.com/s/b0mphQG-nny0X087JsjsKQ
+  + fdx佬的文章
++ https://mp.weixin.qq.com/s/cl0rGIYKugMeE5hUrXPM_g
+  + 回顾一下shellcodeload
