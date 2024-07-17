@@ -495,3 +495,10 @@
   + fdx佬的文章
 + https://mp.weixin.qq.com/s/cl0rGIYKugMeE5hUrXPM_g
   + 回顾一下shellcodeload
++ 最近真的好摆烂
+
+## 第二十八周（2024.7.15-2024.7.21）
+
+> 暑假集训
+
++ 跟着fdx佬弄了下patch bypass的内容 决定将其武器化
