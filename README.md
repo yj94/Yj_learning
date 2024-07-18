@@ -499,6 +499,19 @@
 
 ## 第二十八周（2024.7.15-2024.7.21）
 
-> 暑假集训
+> 暑假集训，免杀开发
 
 + 跟着fdx佬弄了下patch bypass的内容 决定将其武器化
+  + https://mp.weixin.qq.com/s/b0mphQG-nny0X087JsjsKQ
+  + 基本上实现了 名为BinarySpy
++ https://mp.weixin.qq.com/s/htc8ZTbQ23kq3TEMlkqSfA
+  + 昔日的前辈也是干上黑产了
++ 还写了一个资源替换的小工具
+  + https://github.com/yj94/ResSpy
++ 这周的免杀
+  + auto patch
+  + 捆绑 释放 自删除
+  + 无线程注入
+    + 无法过360核晶
++ 国护好像要开始了？22号
+  + 前几天还被ct催平台考试
