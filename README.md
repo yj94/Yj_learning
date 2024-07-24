@@ -517,3 +517,14 @@
   + 前几天还被ct催平台考试
 + https://www.henry-blog.life/henry-blog
   + 大佬博客
++ https://github.com/HACK-THE-WORLD/IDAPluginList
+
+## 第二十九周（2024.7.22-2024.7.28）
+
+> 煎熬的一周
+
++ 有的人已经入场了 有的人还没通知
++ 学习一下别人的https://www.binaryai.cn/
++ https://www.geekby.site/
+  + 大佬博客
++ 马上入场了！
