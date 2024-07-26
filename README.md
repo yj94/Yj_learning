@@ -528,3 +528,9 @@
 + https://www.geekby.site/
   + 大佬博客
 + 马上入场了！
+  + 给我买了保险，还没入，我服了
++ https://oblivions-research.gitbook.io/journal
+  + evasion
++ 上周水了篇文章 还没审核！先知你给我快点上班
+
+## 第三十周（2024.7.29-2024.8.4）
