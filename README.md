@@ -539,5 +539,9 @@
   + 学一下别人的IDA python开发
 + 学了下英语
   + 专升本20 21 真题选择题 还行基本错5/30
++ shellcode开发
+  + https://www.bilibili.com/video/BV1hN4y1y7w6/
+  + https://www.bilibili.com/video/BV1q14y1978H/
+    + 德勒消号了 视频还在
 
 ## 第三十二周（2024.7.29-2024.8.4）
