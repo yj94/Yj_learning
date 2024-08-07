@@ -550,3 +550,22 @@
 
 + 垃圾长亭 垃圾中介 垃圾甲方 垃圾的我
 + 好消息https://github.com/yj94/BinarySpy突破100star了
++ 口头解约，换了dx
+  + **？高级面过了**
++ 项目150+star
++ .net
+  + https://github.com/telerik/JustDecompileEngine
+  + https://www.jetbrains.com/zh-cn/decompiler/
+  + https://github.com/dnSpyEx/dnSpy/releases
+
+## 第三十三周（2024.8.5-2024.8.11）
+
+> 入场了
+
++ **项目200+star了 https://github.com/yj94/BinarySpy**
++ https://www.freebuf.com/sectool/406605.html
+  + fuzz - kvm
++ 知识库
+  + https://testercc.github.io/
+  + https://www.kanxue.com/chm.htm
+  + **https://csdiy.wiki/ 听说这个网站很牛**
