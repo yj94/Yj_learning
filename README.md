@@ -569,3 +569,14 @@
   + https://testercc.github.io/
   + https://www.kanxue.com/chm.htm
   + **https://csdiy.wiki/ 听说这个网站很牛**
++ http://delikely.eu.org/
+  + 物联网知识库
+
+## 第三十四周（2024.8.12-2024.8.18）
+
++ win server 2008 r2更新补丁
+  + https://blog.csdn.net/pop30003000/article/details/129872185
+  + https://www.freebuf.com/articles/system/385094.html
++ 有的系统更新需要前置补丁
++ https://cloud.tencent.com/developer/article/2443756
+  + bypassESU https://dl.lancdn.com/landian/soft/bypassesu/
