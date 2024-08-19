@@ -574,9 +574,18 @@
 
 ## 第三十四周（2024.8.12-2024.8.18）
 
+> 这周遇到几个CVE需要应急和处置，协助打补丁
+
 + win server 2008 r2更新补丁
   + https://blog.csdn.net/pop30003000/article/details/129872185
   + https://www.freebuf.com/articles/system/385094.html
 + 有的系统更新需要前置补丁
 + https://cloud.tencent.com/developer/article/2443756
   + bypassESU https://dl.lancdn.com/landian/soft/bypassesu/
++ 300star祝贺 https://github.com/yj94/BinarySpy
+
+## 第三十五周（2024.8.19-2024.8.25）
+
+> 黑神话之周
+
++ 这几天乐子哥 厦门城市的apt直播红队神
