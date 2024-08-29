@@ -589,3 +589,7 @@
 > 黑神话之周
 
 + 这几天乐子哥 厦门城市的apt直播红队神
++ 这几天单位被钓鱼了，应急溯源做麻了，追溯攻击链真的难，项目经理的筹划能力很强，我的技术稍强，加了两天班
++ https://xz.aliyun.com/t/15385
+  + AFL
++ https://mp.weixin.qq.com/s/JhjvDQ_QMEab73tKv3gzXA
