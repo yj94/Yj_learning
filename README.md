@@ -35,6 +35,7 @@
 > 主要任务：复现漏洞
 
 + 这几天挖了几个本校的漏洞，还没过审
+  + 过了，给了感谢信...
 + CVE-2021-44228 Log4j https://www.freebuf.com/vuls/382838.html https://ctf.show/challenges#Log4j%E5%A4%8D%E7%8E%B0-1730
 + CVE-2023-38831 https://mp.weixin.qq.com/s/zOEwLKKHS11XKVlaE-YtVw
 + CVE-2022-4510 Binwalk 2.12b-2.3.3 https://bbs.kanxue.com/thread-276033.htm
@@ -670,3 +671,10 @@
 ## 第四十四周（2024.10.21-2024.10.27）
 
 > 国赛，一年沉淀只为这一刻
+
++ 在重庆还发烧了
++ 和去年一样三等奖，我是fw
+
+## 第四十五周（2024.10.28-2024.11.2）
+
+> 回家，备考，沉淀
