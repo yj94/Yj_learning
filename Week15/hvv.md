@@ -211,7 +211,7 @@
   + 特征：aced0005，rO0AB 开头 都为反序列化
   + 对用户输入数据进行反序列化处理
   + ObjectinputFilter校验反序列化的类，Hook resolveClass校验
-+ 措施：阿里巴巴的arthas，VisualVM
++ 措施：阿里巴巴的arthas，VisualVM，tomcat-memshell-scanner.jsp
 
 ## HTTP请求走私
 

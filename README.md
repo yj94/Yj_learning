@@ -852,20 +852,35 @@
 
 > 考试顺利
 
-+ 
++ 炸了，预测450分，保底公办吧
 
 ## 第六十六周（2025.3.31-2025.4.6）
 
-> 
+> 教练我想学技术
 
-+ 
++ IDA
+  + 美化伪代码 N重命名 Y修类型 右键collapse隐藏变量 右键 hide cast隐藏类型转换 函数shift+del 隐藏返回值
++ Image File Execution Options Hijack
++ Logon Scripts
+  + HKEY_CURRENT_USER\Environment
++ Winlogon
+  + Set-ItemProperty   "HKLM:\SOFTWARE\Microsoft\WINDOWS NT\CurrentVersion\Winlogon" -name   Userinit -value "C:\Windows\system32\userinit.exe,C:\Windows\system32\cmd.exe"
++ https://github.com/oski02/EarlyBirdAPC
+
 
 ## 第六十七周（2025.4.7-2025.4.13）
 
-> 
+> 当了一周的培训讲师，贵州真好
 
-+ 
-
++ https://www.bleepingcomputer.com/news/security/bypassing-windows-10-uac-with-mock-folders-and-dll-hijacking/
++ https://www.bleepingcomputer.com/news/security/old-windows-mock-folders-uac-bypass-used-to-drop-malware/
++ https://www.sentinelone.com/blog/dbatloader-and-remcos-rat-sweep-eastern-europe/
++ https://hijacklibs.net/
++ https://g3tsyst3m.github.io/privilege%20escalation/Creative-UAC-Bypass-Methods-for-the-Modern-Era/
+  + rename hijack.dll -> BluetoothDiagnosticUtil.dll
+  + get the dll path to %path%
+  + run c:\windows\syswow64\msdt.exe -path C:\WINDOWS\diagnostics\index\BluetoothDiagnostic.xml -skip yes
+  + UAC bypass
 ## 第六十八周（2025.4.14-2025.4.20）
 
 > 
