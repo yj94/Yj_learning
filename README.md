@@ -883,8 +883,24 @@
   + UAC bypass
 ## 第六十八周（2025.4.14-2025.4.20）
 
-> 
+> 优化c2，学习
 
-+ 
++ [各个比赛WP](https://cdisk.imxbt.cn/s/jRfM?path=%2Fwp)
++ 比预测的高了35分，冲XMUT！
 
 ## 第六十九周（2025.4.21-2025.4.27）
+
+> 科目三挂了，准备蓝桥吧
+
++ https://ph3n1x.com/posts/beginner-introduction-to-cobaltstrike-bof-development/
++ 花指令总结 https://www.cnblogs.com/PaperPlaneFly/p/18598009/Flower_Instructions_and_Anti_Confusion
++ 各种混淆加密https://www.cnblogs.com/Only-xiaoxiao/p/16888611.html
+
+## 第七十周（2025.4.28-2025.5.4）
+
+> 给帕鲁杯出题，恢复训练，等待国护
+
++ 蓝桥排名全国400+，太菜了，pwn也是没看过的知识点，但是很简单...
++ 恢复训练只能70kg做组了，两个月没练居然是这样...
++ 国护估计五月底
++ 给帕鲁杯出了5个re1个misc，太好了可以恶心别人了！
