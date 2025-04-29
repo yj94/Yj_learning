@@ -138,7 +138,7 @@
 
 > 主要任务：re、备国赛、争取hvv、web
 >
-> 这周末要长城杯了 且24届的专升本也开考了 祝所有人顺利
+> 这周末要长城杯了
 
 + 写了下远程下载的马，被360QVM杀了，下载到本地这个create一个file流的操作还是太敏感了
 + 总结下自己写的免杀方案吧(粗略)
@@ -167,7 +167,6 @@
   + 更新-没进半决赛，逆天主办方VPN并发只有1000导致赛区人数不准 浙江等大省并入后无法晋级
   + 完全可以让人数平均点，而不是分赛区，难度对我们来说太大了，沿海全是人...明明理论题已经很逆天了
   + 7月吸取教训继续打第二届
-+ 专升本下次就到我了，有点紧张。总感觉这周很漫长，也许是漫无目的的原因，希望四月顺利！
 
 ## 第十五周（2024.4.1-2024.4.7）
 
@@ -538,8 +537,6 @@
   + 巩固一下python
 + https://bbs.kanxue.com/thread-254386.htm
   + 学一下别人的IDA python开发
-+ 学了下英语
-  + 专升本20 21 真题选择题 还行基本错5/30
 + shellcode开发
   + https://www.bilibili.com/video/BV1hN4y1y7w6/
   + https://www.bilibili.com/video/BV1q14y1978H/
@@ -760,7 +757,7 @@
 
 > 新年快乐，讨薪，备考
 
-+ 山东鼎夏这个公司该拉黑了，同级别同工作地点不同价格，拖欠工资，合同霸王条款
++ 某夏这个公司该拉黑了，同级别同工作地点不同价格，拖欠工资，合同霸王条款
   + 结清了还差我500...妈蛋
   + 事后是税率提高了点，不是差500
 
@@ -904,3 +901,8 @@
 + 恢复训练只能70kg做组了，两个月没练居然是这样...
 + 国护估计五月底
 + 给帕鲁杯出了5个re1个misc，太好了可以恶心别人了！
++ 想学一学新的c2 来代替cs,https://adaptix-framework.gitbook.io/adaptix-framework/adaptix-c2/getting-starting/installation
++ creatprocess cmd winapi https://xz.aliyun.com/news/14172
++ .net安全矩阵 https://xz.aliyun.com/users/135861/news
++ https://xz.aliyun.com/news/17739 MCP + IDA
++ iot pwn rce https://xz.aliyun.com/news/17717
