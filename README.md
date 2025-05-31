@@ -906,3 +906,4 @@
 + .net安全矩阵 https://xz.aliyun.com/users/135861/news
 + https://xz.aliyun.com/news/17739 MCP + IDA
 + iot pwn rce https://xz.aliyun.com/news/17717
++ https://github.com/miunasu/MemorySignatureLocate 利用卡巴定位自己shc的特征码
