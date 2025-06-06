@@ -945,3 +945,11 @@
 + 一个好用的类wireshark工具 https://github.com/CuriousLearnerDev/TrafficEye/releases
 + 一个极低价格临时月付虚拟主机(限制端口数量) https://cloud.pasyun.com/
 + 买了个二手翼龙15pro 7940h+4070
++ 科目四过了，这几天拿证！
++ 5G&2.4G deauther https://github.com/warwick320/NovaX-5G-RTL8720dn-Bw16-Deauther
++ 最强ESP32无线测试工具 https://github.com/justcallmekoko/ESP32Marauder
+  + ESP32D (240MHZ)的性能最强
+  + ESP32S3的传输速度最快
++ AI coding... 【从零写AI RAG 个人知识库】https://www.bilibili.com/video/BV168j7zCE6D
++ IOT 环境模拟搭建 https://www.52pojie.cn/thread-2036127-1-1.html
++ 输入法的历史遗留问题...https://www.zhihu.com/question/495763805微软输入法中文状态下按\才是顿号！
