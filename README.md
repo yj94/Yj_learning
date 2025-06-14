@@ -953,3 +953,13 @@
 + AI coding... 【从零写AI RAG 个人知识库】https://www.bilibili.com/video/BV168j7zCE6D
 + IOT 环境模拟搭建 https://www.52pojie.cn/thread-2036127-1-1.html
 + 输入法的历史遗留问题...https://www.zhihu.com/question/495763805微软输入法中文状态下按\才是顿号！
++ find . -exec touch {} \; 修改当前目录下所有文件为当前时间
++ find /home/user/documents -type f -exec touch -d "2023-01-01 12:00:00" {} \;
+
+## 第七十六周（2025.6.8-2025.6.14）
+
+> 兼职某大学实训老师
+
++ qax网神的实训系统太鸡儿难用了，都不更新
++ https://cn.linux-terminal.com/?p=7552 ubuntu 配置 go环境
++ https://docs.fyne.io/started/ fyne编译需要前置条件
