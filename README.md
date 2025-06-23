@@ -963,3 +963,17 @@
 + qax网神的实训系统太鸡儿难用了，都不更新
 + https://cn.linux-terminal.com/?p=7552 ubuntu 配置 go环境
 + https://docs.fyne.io/started/ fyne编译需要前置条件
+
+## 第七十七周（2025.6.15-2025.6.21）
+
+> 兼职某大学实训老师
+
++ ISCC预测两个国1一个国2，嘻嘻嘻，去年被ban了，但是今年带了好多学弟，就我和一个学弟在发力弄wp，做题，好累
++ 申请下网络安全实战人才试试看
++ IDA PRO MCP pip install git+https://gitclone.com/github.com/mrexodia/ida-pro-mcp
+
+## 第七十八周（2025.6.22-2025.6.28）
+
+> 兼职某大学实训老师、等待国护
+
++ https://github.com/yj94/BinarySpy 500star祝贺！
