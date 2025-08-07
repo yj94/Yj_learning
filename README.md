@@ -1022,3 +1022,14 @@
 
 + 国护结束了
 + 抽象的红队钓鱼，最后两天钓了两天，抽象的被钓人，tq弹了4次都没管，上机一看，4个进程（pdf.exe、安全自查压缩包.zip、关于XXX的异议.zip）
+
+## 第八十四周（2025.8.3-2025.8.9）
+
+> 回家，锻炼
+
++ 被录取了，可以人生也是圆满了一点点
++ 重新恢复状态！
++ linux扩展root分区
+  + sudo vgdisplay  # 查看剩余空间（确认 Free PE / Size）
+  + sudo lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
+  + sudo resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
