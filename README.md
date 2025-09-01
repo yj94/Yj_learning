@@ -1033,3 +1033,42 @@
   + sudo vgdisplay  # 查看剩余空间（确认 Free PE / Size）
   + sudo lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
   + sudo resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
++ 用CodeBuddy写了我的c2agent，完美实现了shellcode和nim版本，白嫖真好，赶紧用吧，后续就要收费了
+
+## 第八十五周（2025.8.10-2025.8.16）
+
+> 健身房
+
++ 健身房
+
+## 第八十六周（2025.8.17-2025.8.23）
+
+> 健身房
+
++ 健身房
++ 感觉好孤独
+
+## 第八十七周（2025.8.24-2025.8.30）
+
+> 学习
+
++ https://xz.aliyun.com/news/18582 BOF开发
+
+## 第八十八周（2025.8.31-2025.9.6）
+
+> 摆烂
+
++ 给vps搭建了个dnslog平台，缺点是会显示真实ip，使用方法和dnslog.cn一样
++ https://github.com/lanyi1998/DNSlog-GO
+
+## 第八十九周（2025.9.7-2025.9.13）
+
+> 这周开学
+
++ 
+
+## 第九十周（2025.9.14-2025.9.20）
+
+> 
+
++
