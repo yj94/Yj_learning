@@ -1013,7 +1013,7 @@
   + 换chrome和edge了
 + x64dbg -> 获取地址和RVA -> VA-RVA -> Baseaddress -> ida -> edit -> segment -> rebase address -> 修改为Baseaddress 对其地址方便调试
 + https://blog.seal.college/post/Flower/
-+ 双网卡：WIFI网卡取消勾选“自动跃点”​​，手动设置​​接口跃点数​​（数值越小优先级越高，建议设为​​10​​，比有线网络的默认值更低。
++ 双网卡：WIFI网卡取消勾选“自动跃点”，手动设置接口跃点数（数值越小优先级越高，建议设为10，比有线网络的默认值更低。
 + onedns 52.80.66.66和117.50.22.22
 
 ## 第八十三周（2025.7.27-2025.8.2）
@@ -1188,6 +1188,8 @@
 > 期末周，放假
 
 + 准备考信安管4级，理论题100，操作题100，像软考
+  + 含金量如史
++ 考过了 再次含金量如史(好像能领补贴)
 
 ## 第一百一十八周（2025.1.25-2025.1.31）
 
@@ -1211,6 +1213,53 @@
 
 ## 第一百二十周（2025.2.8-2025.2.14）
 
-> 摆烂
+> 记录点
 
-+ 摆烂
++ https://medium.com/@S.1.l.k.y/abusing-windows-audio-for-local-privilege-escalation-1d59440116cb 提权
+  + 这玩意污染我系统变量
++ https://github.com/itm4n/PrivescCheck 提权可利用检查 PS
+
+## 第一百二十一周（2025.2.15-2025.2.21）
+
+> 春节
+
++ 新春快乐
+
+## 第一百二十二周（2025.2.22-2025.2.28）
+
+> GDR优化 RAG+LLM
+
++ lmdeploy serve api_server E:/models/llm4decompile-6.7b 
+  --server-name 0.0.0.0 
+  --server-port 23333 \
+  --cache-max-entry-count 0.6
+
+## 第一百二十三周（2025.2.29-2025.3.7）
+
+> 复现项目，学习知识
+
++ 完全不安全的编译 gcc -m32 -g -mpreferred-stack-boundary=2 -no-pie -fno-stack-protector -Wl,-z,norelro -z execstack
++ 关闭ASLR sudo bash -c 'echo 0 > /proc/sys/kernel/randomize_va_space'
+
+## 第一百二十四周（2025.3.8-2025.3.14）
+
+> 重拾安卓
+
++ [Xposed-Modules-Repo/com.flass.layoutinspect: Layout Inspect](https://github.com/Xposed-Modules-Repo/com.flass.layoutinspect)
++ [SimpeHookR](https://github.com/littleWhiteDuck/SimpleHook)
++ 解决压缩temp目录空间不足问题
+  + set TEMP=D:\temp && set TMP=D:\temp && 7z x "Ubuntu20.04逆向虚拟机.7z" -o E:\Android-Ubuntu
+  + 直接右键解压到 不要拖拽
++ 打了软件系统安全，太难了，而且套娃，这只是初赛啊，别人可以用ai ak
+
+## 第一百二十五周（2025.3.15-2025.3.21）
+
+> 学习
+
++ 计算机\HKEY_CURRENT_USER\Software\Microsoft\InputMethod\CandidateWindow\CHS\1 改为大数就可隐藏微软输入法候选框
++ npx skills add ljagiello/ctf-skills 挺牛逼
++ https://www.offsec.com/products/90-day-bundle/
++ https://biscottidiskette.github.io/projects/2_osedstudy/
++ https://osintteam.blog/offsec-exploit-developer-osed-course-review-and-exam-preparation-tips-637a208934b8
++ https://blog.deephacking.tech/en/posts/offsec-osed-review/?utm_source=chatgpt.com
++ https://jacklgmcbride.co.uk/blog/index.php/2024/07/22/offensive-security-exploit-developer-osed-review/?utm_source=chatgpt.com
