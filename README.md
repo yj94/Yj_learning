@@ -1258,8 +1258,20 @@
 
 + 计算机\HKEY_CURRENT_USER\Software\Microsoft\InputMethod\CandidateWindow\CHS\1 改为大数就可隐藏微软输入法候选框
 + npx skills add ljagiello/ctf-skills 挺牛逼
-+ https://www.offsec.com/products/90-day-bundle/
-+ https://biscottidiskette.github.io/projects/2_osedstudy/
-+ https://osintteam.blog/offsec-exploit-developer-osed-course-review-and-exam-preparation-tips-637a208934b8
-+ https://blog.deephacking.tech/en/posts/offsec-osed-review/?utm_source=chatgpt.com
-+ https://jacklgmcbride.co.uk/blog/index.php/2024/07/22/offensive-security-exploit-developer-osed-review/?utm_source=chatgpt.com
++ OSED
+  + https://www.offsec.com/products/90-day-bundle/
+  + https://biscottidiskette.github.io/projects/2_osedstudy/
+  + https://osintteam.blog/offsec-exploit-developer-osed-course-review-and-exam-preparation-tips-637a208934b8
+  + https://blog.deephacking.tech/en/posts/offsec-osed-review/?utm_source=chatgpt.com
+  + https://jacklgmcbride.co.uk/blog/index.php/2024/07/22/offensive-security-exploit-developer-osed-review/?utm_source=chatgpt.com
+  + https://rouvin.gitbook.io/ibreakstuff/blogs/reviews/osed-review
+  + https://insanitys.medium.com/osed-review-cheatsheet-ad55b8aab1e2
+  + https://darkwing.moe/2022/10/07/OSED%E5%8F%97%E9%A8%93%E8%A8%98/
+  + https://red-team.tips/
+  + https://github.com/epi052/osed-scripts/blob/main/shellcoder.py
+  + https://medium.com/@b3rm1nG/exp-301-osed-證照滿分之旅-f55c95146abc
+  + https://hacktips.it/dep-vulnserver-trun/
+  + https://whereisk0shl.top/
+  + https://github.com/senzee1984/OSCE3-Notes
+  + https://n0maj1o24.notion.site/OSCE3-Certification-From-Zero-to-One-8cba8825129441aba5d0b7a78961f5bf
+  + https://www.youtube.com/@GuidedHacking
