@@ -1258,6 +1258,7 @@
 
 + 计算机\HKEY_CURRENT_USER\Software\Microsoft\InputMethod\CandidateWindow\CHS\1 改为大数就可隐藏微软输入法候选框
 + npx skills add ljagiello/ctf-skills 挺牛逼
+  + 搭配codex无敌
 + OSED
   + https://www.offsec.com/products/90-day-bundle/
   + https://biscottidiskette.github.io/projects/2_osedstudy/
@@ -1275,3 +1276,9 @@
   + https://github.com/senzee1984/OSCE3-Notes
   + https://n0maj1o24.notion.site/OSCE3-Certification-From-Zero-to-One-8cba8825129441aba5d0b7a78961f5bf
   + https://www.youtube.com/@GuidedHacking
+
+## 第一百二十六周（2025.3.22-2025.3.28）
+
+> OSED,EDR完善
+
++ 对EDR有用的文章https://mp.weixin.qq.com/s/_Z1PCnQsFWkFJ_iJwXWY8A
