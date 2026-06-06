@@ -1313,15 +1313,50 @@
 > 回归，想考研
 
 + 这周六是蓝桥（被某部除名的垃J比赛）
+  + 差2题ak
 
 ## 第一百二十三周（2026.4.27-2026.5.3）
 
-> 休息
+> 项目中
 
-+ 休息
++ 顺便写我的CTF-AWD平台
++ copyfail nb
 
 ## 第一百二十四周（2026.5.4-2026.5.10）
 
-> 休息
+> 项目中
 
-+ 休息
++ 我发现dnspy mcp太强了...改IL没有那么难受了
+
+## 第一百二十五周（2026.5.11-2026.5.17）
+
+> vibe coding
+
++ 写了好多垃圾项目
++ Emulation based unpacker
+  + 说是可以通用脱壳
+
+## 第一百二十六周（2026.5.18-2026.5.24）
+
+> 项目中
+
++ 完善CTF-AWDP平台，出docker题(vulhub)
++ tailscale.com 一个免费的组网VPN工具
++ https://github.com/matrixcascade/PainterEngine 跨平台C图形引擎
+
+## 第一百二十七周（2026.5.25-2026.5.31）
+
+> 项目中、蓝桥
+
++ xxx全国第四
++ 蓝桥国一
++ https://github.com/AabyssZG/HashDump-BypassEDR 曾哥的 HASHDUMP新手法
+
+## 第一百二十八周（2026.6.1-2026.6.7）
+
+> 返校
+
++ 补课
++ https://github.com/Whitecat18/LazyDLLSideload 我认为最强的侧加载模板生成器（rust）
++ https://github.com/J5now/JDex2 基于lsposed的dex脱壳器
+  + https://bbs.kanxue.com/thread-290669.htm
