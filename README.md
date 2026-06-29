@@ -1229,9 +1229,9 @@
 
 > GDR优化 RAG+LLM
 
-+ lmdeploy serve api_server E:/models/llm4decompile-6.7b 
-  --server-name 0.0.0.0 
-  --server-port 23333 \
++ lmdeploy serve api_server E:/models/llm4decompile-6.7b
+  --server-name 0.0.0.0
+  --server-port 23333
   --cache-max-entry-count 0.6
 
 ## 第一百一十五周（2026.3.2-2026.3.8）
@@ -1360,3 +1360,61 @@
 + https://github.com/Whitecat18/LazyDLLSideload 我认为最强的侧加载模板生成器（rust）
 + https://github.com/J5now/JDex2 基于lsposed的dex脱壳器
   + https://bbs.kanxue.com/thread-290669.htm
++ https://bu1.github.io/categories/Windows%E5%AE%89%E5%85%A8/ windwos安全
++ [新型社工钓鱼伪装技术之WinGet配置文件+Lnk文件 | 卡卡罗特取西经](https://ybdt.me/2026/04/21/%E6%96%B0%E5%9E%8B%E7%A4%BE%E5%B7%A5%E9%92%93%E9%B1%BC%E4%BC%AA%E8%A3%85%E6%8A%80%E6%9C%AF%E4%B9%8BWinGet%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-Lnk%E6%96%87%E4%BB%B6/)
++ [卡卡罗特取西经](https://ybdt.me/) 好博客
+
+## 第一百二十九周（2026.6.8-2026.6.14）
+
+> 研究
+
++ BYOVD
+  + https://github.com/416rehman/deepzero
+  + https://github.com/0xDbgMan/DrvEye
+  + https://github.com/boing737ng/DriverSight
+  + https://github.com/The-Sword-of-Constantine/UsingBYOVD
++ OSEP
+  + [OSEP-PEN-300/OSEP_PDF at main · Coding-Lou/OSEP-PEN-300](https://github.com/Coding-Lou/OSEP-PEN-300/tree/main/OSEP_PDF)
+
+## 第一百三十周（2026.6.15-2026.6.21）
+
+> vibe
+
++ https://www.skcircle.com/?id=2462 WDK开发部署
++ https://www.bilibili.com/video/BV1RC4y1V7L4 海龙的EDR开发公开课录播（2023年）
++ SDK和WDK要下载版本完全一致的，包括小版本...
++ https://www.secrss.com/articles/87679 win11要可选接入sysmon了，对edr利好
++ edr博客https://racoten.github.io/Self-Taught-Course/Project/Nidhogg/Nidhogg_index.html
++ https://racoten.github.io/Self-Taught-Course/
++ harness https://github.com/YYHDBL/nlp-agent-notes/blob/main/notes/agents/from-vibe-coding-to-harness-engineering.md
++ 继续回顾key08 鸭神的blog https://key08.com/
+
+## 第一百三十一周（2026.6.22-2026.6.28）
+
+> WDK
+
++ https://www.lyshark.com/categories/%E3%80%8AWindows-%E5%86%85%E6%A0%B8%E5%AE%89%E5%85%A8%E7%BC%96%E7%A8%8B%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5%E3%80%8B/
++ https://github.com/Monoceros406/WinKerDevBook1
+
+## 第一百三十二周（2026.6.29-2026.7.5）
+
+> hvv周?
+
++ 神奇bug
+  + 问题出在 Windows 的 HTTP 协议栈/网络过滤层。
+
+    你的客户端发送请求头里有 Accept-Encoding: gzip, deflate, br，Windows（可能是杀毒软件、防火墙、或系统级 HTTP 压缩功能）在 Go HTTP server 写出原始数据后，自动用 gzip 压缩了响应体，但没有加 Content-Encoding: gzip 头。
+
+    Go 的 HTTP client 对于 Content-Encoding 的处理逻辑是：
+    - 如果 Go transport 自己加的 Accept-Encoding → 自动解压 ✅
+    - 如果 客户端显式设置的 Accept-Encoding（Yone 就是这么做的）→ 不解压 ❌
+
+    所以收到的 body 是 gzip 压缩过的密文，直接解密自然失败。
+
+    为什么 Rust 没问题：
+
+    Rust 用的是 ureq 库，它处理 gzip 的方式不同。ureq 会自动检测 gzip 内容并解压，不管有没有 Content-Encoding 头。而且 ureq 的 gzip 处理走的是 rustls / native-tls 层，不依赖服务端是否标注了编码头。
+
+    为什么抓包会恢复：
+
+    Wireshark/Npcap 开启后强制网卡禁用硬件 offload（TSO/LSO），改变了 Windows TCP 协议栈的数据处理路径，也可能避开了那个做 gzip 压缩的网络过滤层（比如某些杀毒软件在抓包活动时会暂停 HTTP 流量扫描）。
