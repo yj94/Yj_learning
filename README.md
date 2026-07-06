@@ -1406,6 +1406,7 @@
     你的客户端发送请求头里有 Accept-Encoding: gzip, deflate, br，Windows（可能是杀毒软件、防火墙、或系统级 HTTP 压缩功能）在 Go HTTP server 写出原始数据后，自动用 gzip 压缩了响应体，但没有加 Content-Encoding: gzip 头。
 
     Go 的 HTTP client 对于 Content-Encoding 的处理逻辑是：
+
     - 如果 Go transport 自己加的 Accept-Encoding → 自动解压 ✅
     - 如果 客户端显式设置的 Accept-Encoding（Yone 就是这么做的）→ 不解压 ❌
 
@@ -1418,3 +1419,13 @@
     为什么抓包会恢复：
 
     Wireshark/Npcap 开启后强制网卡禁用硬件 offload（TSO/LSO），改变了 Windows TCP 协议栈的数据处理路径，也可能避开了那个做 gzip 压缩的网络过滤层（比如某些杀毒软件在抓包活动时会暂停 HTTP 流量扫描）。
++ 信息安全知识库 下载pdf的 https://vipread.com
+
+## 第一百三十三周（2026.7.6-2026.7.12）
+
+> 暑假 vibe
+
++ https://github.com/hasherezade/pe-sieve
++ vibe了两个项目
+  + https://github.com/yj94/YoneSysHunter
+  + https://github.com/yj94/JADX-NO-MCP
