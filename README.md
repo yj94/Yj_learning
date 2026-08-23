@@ -1429,3 +1429,59 @@
 + vibe了两个项目
   + https://github.com/yj94/YoneSysHunter
   + https://github.com/yj94/JADX-NO-MCP
++ .NET逆向(MSIX) prompt
+
+| **用途**      | **工具**                   |
+| ------------------- | -------------------------------- |
+| PE + CLI 元数据解析 | 自写 Python                      |
+| .NET IL 反汇编      | 自写 Python                      |
+| IL Patch            | **Mono.Cecil** （nuget）   |
+| 提权脚本            | PowerShell Add-Type（C# inline） |
+
+* **User.IsVip** / **IsPaid** / **IsPro** —— 主校验
+* **User.IsPermanentVip** / **LicenseValid** —— 永久会员校验
+* **User.VipType** —— 返回 Permanent（注意查枚举值）
+* **IsTrial** / **IsTrialVip** —— 设为 false，避免试用限制
+* **AccountManager.IsLogin** / **LoginState** —— UI 状态机判断
++ https://bbs.kanxue.com/thread-291930.htm 安卓vibe逆向
+
+## 第一百三十四周（2026.7.13-2026.7.19）
+
+> 代码审计 应急响应 等hvv
+
++ 搓了套代码审计（用的python 感觉防破解能力差）
++ 搓了套ir工具（用GO 感觉挺好的）
+
+## 第一百三十五周（2026.7.20-2026.7.26）
+
+> 等hvv
+
++ ir工具已经差不多了感觉在hvv上能露出锋芒
+
+## 第一百三十六周（2026.7.27-2026.8.2）
+
+> 等hvv
+
++ https://bbs.kanxue.com/thread-291832.htm CE MCP
+  + https://github.com/HollyZoe/cheatengine-mcp-tcp-bridge
+
+## 第一百三十七周（2026.8.3-2026.8.9）
+
+> hvv
+
++ https://blog.csdn.net/keacwu/article/details/103837273
++ 第一周真忙，各种写报告
++ 这周被一个接口开放的hutool调用直接exec javacode导致内存马然后横向了两台机子
+
+## 第一百三十八周（2026.8.10-2026.8.16）
+
+> hvv
+
++ 这周被几个0day打了，企业管理系统，SSTI java注入，各种反序列化
+
+## 第一百三十八周（2026.8.17-2026.8.23）
+
+> hvv
+
++ 换新项目了，监测组居然有50人，研判 应急各20多人
+  + 混了个只有5人的专家组
